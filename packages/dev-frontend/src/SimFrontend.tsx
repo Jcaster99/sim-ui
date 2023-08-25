@@ -19,7 +19,8 @@ import { TroveViewProvider } from "./components/Trove/context/TroveViewProvider"
 import { StabilityViewProvider } from "./components/Stability/context/StabilityViewProvider";
 import { StakingViewProvider } from "./components/Staking/context/StakingViewProvider";
 import "tippy.js/dist/tippy.css";
-import { BondsProvider } from './components/Bonds/context/BondsProvider'; // Tooltip default style
+import { BondsProvider } from "./components/Bonds/context/BondsProvider"; // Tooltip default style
+import { LandingPage } from "./pages/LandingPage";
 
 type SimFrontendProps = {
   loader?: React.ReactNode;
@@ -45,30 +46,32 @@ export const SimFrontend: React.FC<SimFrontendProps> = ({ loader }) => {
           <StabilityViewProvider>
             <StakingViewProvider>
               <BondsProvider>
-                <Flex sx={{ flexDirection: "column", minHeight: "100%" }}>
-                  <Header>
-                    <UserAccount />
-                    <SystemStatsPopup />
-                  </Header>
-
-                  <Container
-                    variant="main"
-                    sx={{
-                      display: "flex",
-                      flexGrow: 1,
-                      flexDirection: "column",
-                      alignItems: "center"
-                    }}
-                  >
-                    <Switch>
-                      <Route path="/" exact>
+                <Flex sx={{ flexDirection: "column", minHeight: "100%", background: "#000" }}>
+                  <Switch>
+                    <Route path="/" exact>
+                      <LandingPage />
+                    </Route>
+                    <Container
+                      variant="main"
+                      sx={{
+                        display: "flex",
+                        flexGrow: 1,
+                        flexDirection: "column",
+                        alignItems: "center"
+                      }}
+                    >
+                      <Header>
+                        <UserAccount />
+                        <SystemStatsPopup />
+                      </Header>
+                      <Route path="/dashboard" exact>
                         <PageSwitcher />
                       </Route>
                       <Route path="/risky-troves">
                         <RiskyTrovesPage />
                       </Route>
-                    </Switch>
-                  </Container>
+                    </Container>
+                  </Switch>
                 </Flex>
               </BondsProvider>
             </StakingViewProvider>

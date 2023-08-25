@@ -1,7 +1,7 @@
 import { Theme, ThemeUIStyleObject } from "theme-ui";
 
 const baseColors = {
-  blue: "#1542cd",
+  blue: "#8EE8A0",
   purple: "#745ddf",
   cyan: "#2eb6ea",
   green: "#28c081",
@@ -44,7 +44,11 @@ const button: ThemeUIStyleObject = {
 
   color: "white",
   border: 1,
-
+  "&:hover": {
+    color: "background",
+    bg: "background",
+    opacity: 0.5
+  },
   fontWeight: "bold",
 
   ":disabled": {
@@ -201,8 +205,9 @@ const theme: Theme = {
       borderColor: "primary",
 
       ":enabled:hover": {
-        bg: "secondary",
-        borderColor: "secondary"
+        bg: "primary",
+        borderColor: "primary",
+        opacity: 0.8
       }
     },
 

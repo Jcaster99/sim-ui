@@ -494,14 +494,21 @@ const theme: Theme = {
 
   links: {
     nav: {
-      px: 2,
-      py: 1,
+      px: 3,
+      py: 2,
       fontWeight: "medium",
       fontSize: 2,
       textTransform: "uppercase",
       letterSpacing: "2px",
-      width: ["100%", "auto"],
-      mt: [3, "auto"]
+      width: '100%',
+              color: "white",
+              borderLeft: '4px solid transparent',
+              mt: [3, "auto"],
+              "&.active": {
+              color: "white",
+                    background: `linear-gradient(143deg, #0A0D0A 0%, rgba(10, 10, 13, 0.53) 0.01%, rgba(19, 255, 156, 0.12) 100%)`,
+                    borderLeft: '4px solid #8EE8A0'
+                }
     }
   }
 };

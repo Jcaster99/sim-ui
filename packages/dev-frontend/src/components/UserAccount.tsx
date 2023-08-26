@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Flex, Box, Heading, Button } from "theme-ui";
+import { Text, Flex, Box, Heading, Button,Image } from "theme-ui";
 
 import { Decimal, SimStoreState } from "@sim/lib-base";
 import { useSimSelector } from "@sim/lib-react";
@@ -22,8 +22,31 @@ export const UserAccount: React.FC = () => {
   const { wstETHBalance, shadyBalance, simBalance } = useSimSelector(select);
 
   return (
-    <Flex>
-      <ConnectKitButton.Custom>
+    <Flex sx={{gap:'24px'}}>
+      <Box
+        sx={{
+          display: ["none", "flex"],
+                          alignItems: "center",
+          gap: '24px'
+        }}
+      >
+        {/* <Icon name="wallet" size="lg" /> */}
+
+        {([
+          [COLLATERAL, Decimal.from(wstETHBalance)],
+          [GT, Decimal.from(shadyBalance)],
+          [COIN, Decimal.from(simBalance)],
+        ] as const).map(([currency, balance], i) => (
+              <Flex key={i} sx={{ alignItems: 'center' }}>
+                   <Image src="./icons/tree.svg" sx={{ width: "32px", height: "32px" }} />
+                    <Flex  sx={{ ml: 1, flexDirection: "column" }}>
+            <Heading sx={{ fontSize: 1, color: 'white' }}>{currency}</Heading>
+            <Text sx={{ fontSize: 1, color: 'white' }}>{balance.prettify()}</Text>
+          </Flex>
+          </Flex>
+        ))}
+              </Box>
+              <ConnectKitButton.Custom>
         {connectKit => (
           <Button
             variant="outline"
@@ -37,26 +60,6 @@ export const UserAccount: React.FC = () => {
           </Button>
         )}
       </ConnectKitButton.Custom>
-
-      <Box
-        sx={{
-          display: ["none", "flex"],
-          alignItems: "center"
-        }}
-      >
-        <Icon name="wallet" size="lg" />
-
-        {([
-          [COLLATERAL, Decimal.from(wstETHBalance)],
-          [COIN, Decimal.from(simBalance)],
-          [GT, Decimal.from(shadyBalance)],
-        ] as const).map(([currency, balance], i) => (
-          <Flex key={i} sx={{ ml: 3, flexDirection: "column" }}>
-            <Heading sx={{ fontSize: 1 }}>{currency}</Heading>
-            <Text sx={{ fontSize: 1 }}>{balance.prettify()}</Text>
-          </Flex>
-        ))}
-      </Box>
     </Flex>
   );
 };

@@ -5,7 +5,7 @@ import { useSimSelector } from "@sim/lib-react";
 
 import { Statistic } from "./Statistic";
 import * as l from "../lexicon";
-import { COLLATERAL } from '../strings';
+import { COLLATERAL } from "../strings";
 
 const selectBalances = ({ accountBalance, simBalance, shadyBalance }: SimStoreState) => ({
   accountBalance,
@@ -25,7 +25,6 @@ const Balances: React.FC = () => {
     </Box>
   );
 };
-
 
 type SystemStatsProps = {
   variant?: string;
@@ -68,12 +67,19 @@ export const SystemStats: React.FC<SystemStatsProps> = ({ variant = "info", show
   const borrowingFeePct = new Percent(borrowingRate);
 
   return (
-    <Card {...{ variant }}>
+    <Card
+      {...{ variant }}
+      sx={{
+        background:
+          "linear-gradient(143deg, rgba(10, 10, 13, 0.41) 0%, rgba(58, 53, 82, 0.34) 100%)",
+        borderColor: "transparent"
+      }}
+    >
       {showBalances && <Balances />}
 
-      <Heading>Shadowy Internet Money statistics</Heading>
+      <Heading sx={{ color: "#8EE8A0" }}>Shadowy Internet Money statistics</Heading>
 
-      <Heading as="h2" sx={{ mt: 3, fontWeight: "body" }}>
+      <Heading as="h2" sx={{ mt: 3, fontWeight: "body", color: "#00D6D6" }}>
         Protocol
       </Heading>
 
@@ -81,7 +87,7 @@ export const SystemStats: React.FC<SystemStatsProps> = ({ variant = "info", show
 
       <Statistic lexicon={l.TVL}>
         {total.collateral.shorten()} <Text sx={{ fontSize: 1 }}>&nbsp;{COLLATERAL}</Text>
-        <Text sx={{ fontSize: 1 }}>
+        <Text sx={{ fontSize: 1, color: 'white' }}>
           &nbsp;(${Decimal.from(total.collateral.mul(price)).shorten()})
         </Text>
       </Statistic>
@@ -90,7 +96,7 @@ export const SystemStats: React.FC<SystemStatsProps> = ({ variant = "info", show
       {simInStabilityPoolPct && (
         <Statistic lexicon={l.STABILITY_POOL_SIM}>
           {simInStabilityPool.shorten()}
-          <Text sx={{ fontSize: 1 }}>&nbsp;({simInStabilityPoolPct.toString(1)})</Text>
+          <Text sx={{ fontSize: 1, color: 'white' }}>&nbsp;({simInStabilityPoolPct.toString(1)})</Text>
         </Statistic>
       )}
       <Statistic lexicon={l.STAKED_SHADY}>{totalStakedSHADY.shorten()}</Statistic>

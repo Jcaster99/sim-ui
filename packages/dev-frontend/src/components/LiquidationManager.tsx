@@ -13,24 +13,31 @@ export const LiquidationManager: React.FC = () => {
   const [numberOfTrovesToLiquidate, setNumberOfTrovesToLiquidate] = useState("90");
 
   return (
-    <Card>
-      <Heading>Liquidate</Heading>
-
-      <Box sx={{ p: [2, 3] }}>
-        <Flex sx={{ alignItems: "stretch" }}>
-          <Label>Up to</Label>
-
+    <Card sx={{ background: "transparent", border: "none" }}>
+      {/* <Heading>Liquidate</Heading> */}
+      <Label sx={{ color: "white" }}>Liquidate</Label>
+      <Box>
+        <Flex sx={{ alignItems: "stretch", backgroundColor: "rgba(111, 111, 115, 0.12)" }}>
+          <Label sx={{ color: "#8EE8A0" }}>Up to</Label>
           <Input
             type="number"
             min="1"
             step="1"
             value={numberOfTrovesToLiquidate}
             onChange={e => setNumberOfTrovesToLiquidate(e.target.value)}
+            sx={{
+              background: "transparent",
+              borderColor: "transparent",
+              color: "white",
+              ":focus-visible": {
+                outline: "none"
+              }
+            }}
           />
 
-          <Label>Troves</Label>
+          <Label sx={{ color: "white" }}>Troves</Label>
 
-          <Flex sx={{ ml: 2, alignItems: "center" }}>
+          <Flex sx={{ alignItems: "center" }}>
             <Transaction
               id="batch-liquidate"
               tooltip="Liquidate"

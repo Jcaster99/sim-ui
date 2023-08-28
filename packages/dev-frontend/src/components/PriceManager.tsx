@@ -27,18 +27,29 @@ export const PriceManager: React.FC = () => {
   }, [price]);
 
   return (
-    <Card>
-      <Heading>Price feed</Heading>
+    <Card
+      sx={{
+        background:
+          "linear-gradient(143deg, rgba(10, 10, 13, 0.41) 0%, rgba(58, 53, 82, 0.34) 100%)",
+        borderColor: "transparent"
+      }}
+    >
+      {/* <Heading>Price feed</Heading> */}
 
       <Box sx={{ p: [2, 3] }}>
-        <Flex sx={{ alignItems: "stretch" }}>
-          <Label>wstETH</Label>
+        <Label sx={{ color: "white" }}> Price feed</Label>
 
-          <Label variant="unit">$</Label>
+        <Flex px={2} sx={{ alignItems: "stretch", background: "rgba(111, 111, 115, 0.12)" }}>
+          <Label sx={{ color: "white" }}>wstETH</Label>
+
+          <Label variant="unit" sx={{ background: "transparent", border: "none",color: "white" }}>
+            $
+          </Label>
 
           <Input
             type={canSetPrice ? "number" : "text"}
             step="any"
+            sx={{ background: "transparent", border: "none",color: "white" }}
             value={editedPrice}
             onChange={e => setEditedPrice(e.target.value)}
             disabled={!canSetPrice}

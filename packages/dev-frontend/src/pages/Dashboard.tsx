@@ -145,7 +145,9 @@ export const Dashboard: React.FC = () => {
           {tabActive === "strove" ? (
             <Trove />
           ) : tabActive === "staking" ? (
-            <Staking />
+            // <Staking />
+            <Stability />
+
           ) : (
             <Stability />
           )}

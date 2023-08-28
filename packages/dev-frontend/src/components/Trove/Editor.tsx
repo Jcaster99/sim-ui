@@ -19,6 +19,8 @@ export const Row: React.FC<RowProps> = ({ sx, label, labelId, labelFor, children
         width: "100%",
         background: "transparent",
         flexDirection: "column",
+        border: "none",
+
         ...sx
       }}
     >

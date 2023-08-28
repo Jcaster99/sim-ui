@@ -14,7 +14,7 @@ import { useSimSelector } from "@sim/lib-react";
 
 import { shortenAddress } from "../utils/shortenAddress";
 import { useSim } from "../hooks/SimContext";
-import { COIN, COLLATERAL } from '../strings';
+import { COIN, COLLATERAL } from "../strings";
 
 import { Icon } from "./Icon";
 import { LoadingOverlay } from "./LoadingOverlay";
@@ -155,10 +155,18 @@ export const RiskyTroves: React.FC<RiskyTrovesProps> = ({ pageSize }) => {
   }, [copied]);
 
   return (
-    <Card sx={{ width: "100%" }}>
-      <Heading>
+    <Card sx={{ width: "100%", background: "transparent", border: "none" }}>
+      {/* <Heading> */}
+      <Flex
+        sx={{
+          px: "16px",
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "space-between",
+          backgroundColor: "rgba(111, 111, 115, 0.12)"
+        }}
+      >
         <Abbreviation short="Troves">Risky Troves</Abbreviation>
-
         <Flex sx={{ alignItems: "center" }}>
           {numberOfTroves !== 0 && (
             <>
@@ -171,7 +179,7 @@ export const RiskyTroves: React.FC<RiskyTrovesProps> = ({ pageSize }) => {
               </Abbreviation>
 
               <Button variant="titleIcon" onClick={previousPage} disabled={clampedPage <= 0}>
-                <Icon name="chevron-left" size="lg" />
+                <Icon name="chevron-left" size="lg" color="white" />
               </Button>
 
               <Button
@@ -179,7 +187,7 @@ export const RiskyTroves: React.FC<RiskyTrovesProps> = ({ pageSize }) => {
                 onClick={nextPage}
                 disabled={clampedPage >= numberOfPages - 1}
               >
-                <Icon name="chevron-right" size="lg" />
+                <Icon name="chevron-right" size="lg" color="white" />
               </Button>
             </>
           )}
@@ -189,10 +197,11 @@ export const RiskyTroves: React.FC<RiskyTrovesProps> = ({ pageSize }) => {
             sx={{ opacity: loading ? 0 : 1, ml: [0, 3] }}
             onClick={forceReload}
           >
-            <Icon name="redo" size="lg" />
+            <Icon name="redo" size="lg" color="white" />
           </Button>
         </Flex>
-      </Heading>
+      </Flex>
+      {/* </Heading> */}
 
       {!troves || troves.length === 0 ? (
         <Box sx={{ p: [2, 3] }}>
@@ -223,16 +232,20 @@ export const RiskyTroves: React.FC<RiskyTrovesProps> = ({ pageSize }) => {
 
             <thead>
               <tr>
-                <th>Owner</th>
+                <th style={{ color: "white" }}>Owner</th>
                 <th>
                   <Abbreviation short="Coll.">Collateral</Abbreviation>
-                  <Box sx={{ fontSize: [0, 1], fontWeight: "body", opacity: 0.5 }}>{COLLATERAL}</Box>
+                  <Box sx={{ fontSize: [0, 1], fontWeight: "body", opacity: 0.5, color: "white" }}>
+                    {COLLATERAL}
+                  </Box>
                 </th>
-                <th>
+                <th style={{ color: "white" }}>
                   Debt
-                  <Box sx={{ fontSize: [0, 1], fontWeight: "body", opacity: 0.5 }}>{COIN}</Box>
+                  <Box sx={{ fontSize: [0, 1], fontWeight: "body", opacity: 0.5, color: "white" }}>
+                    {COIN}
+                  </Box>
                 </th>
-                <th>
+                <th style={{ color: "white" }}>
                   Coll.
                   <br />
                   Ratio
@@ -260,7 +273,8 @@ export const RiskyTroves: React.FC<RiskyTrovesProps> = ({ pageSize }) => {
                             sx={{
                               width: ["73px", "unset"],
                               overflow: "hidden",
-                              position: "relative"
+                              position: "relative",
+                              color: "white"
                             }}
                           >
                             {shortenAddress(trove.ownerAddress)}

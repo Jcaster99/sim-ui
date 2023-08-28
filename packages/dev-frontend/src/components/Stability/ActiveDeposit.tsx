@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect } from "react";
-import { Card, Heading, Box, Flex, Button } from "theme-ui";
+import { Card, Heading, Box, Flex, Button, Label, Text } from "theme-ui";
 
 import { SimStoreState } from "@sim/lib-base";
 import { useSimSelector } from "@sim/lib-react";
 
-import { COIN, COLLATERAL, GT } from '../../strings';
+import { COIN, COLLATERAL, GT } from "../../strings";
 import { Icon } from "../Icon";
 import { LoadingOverlay } from "../LoadingOverlay";
 import { useMyTransactionState } from "../Transaction";
@@ -15,6 +15,8 @@ import { useStabilityView } from "./context/StabilityViewContext";
 import { RemainingSHADY } from "./RemainingSHADY";
 import { Yield } from "./Yield";
 import { InfoIcon } from "../InfoIcon";
+import { InfoRow } from "../Dashboard/InfoRow";
+import { ActionDescription } from "../ActionDescription";
 
 const selector = ({ stabilityDeposit, trove, simInStabilityPool }: SimStoreState) => ({
   stabilityDeposit,
@@ -49,16 +51,16 @@ export const ActiveDeposit: React.FC = () => {
   }, [transactionState.type, dispatchEvent]);
 
   return (
-    <Card>
-      <Heading>
+    <Card sx={{ backgroundColor: "transparent", border: "none" }}>
+      {/* <Heading>
         Stability Pool
         {!isWaitingForTransaction && (
           <Flex sx={{ justifyContent: "flex-end" }}>
             <RemainingSHADY />
           </Flex>
         )}
-      </Heading>
-      <Box sx={{ p: [2, 3] }}>
+      </Heading> */}
+      <Box>
         <Box>
           <DisabledEditableRow
             label="Deposit"
@@ -66,8 +68,30 @@ export const ActiveDeposit: React.FC = () => {
             amount={stabilityDeposit.currentSIM.prettify()}
             unit={COIN}
           />
+          <Box>
+            <Label
+              sx={{
+                p: 0,
 
-          <StaticRow
+                // position: "absolute",
+                fontSize: "14px",
+                // border: 1,
+                borderColor: "transparent",
+                background: "transparent",
+                color: "white",
+                fontWeight: 500,
+                lineHeight: "20px"
+              }}
+            >
+              <Flex sx={{ alignItems: "center" }}>Pool share</Flex>
+            </Label>
+            <Flex mb={2}>
+              <Text sx={{ color: "white", fontWeight: "medium" }}>{poolShare.prettify(4)}</Text>
+
+              <Text sx={{ fontWeight: "light", opacity: 1, color: "white" }}>%</Text>
+            </Flex>
+          </Box>
+          {/* <StaticRow
             label="Pool share"
             inputId="deposit-share"
             amount={poolShare.prettify(4)}
@@ -80,9 +104,9 @@ export const ActiveDeposit: React.FC = () => {
             amount={stabilityDeposit.collateralGain.prettify(4)}
             color={stabilityDeposit.collateralGain.nonZero && "success"}
             unit="wstETH"
-          />
+          /> */}
 
-          <Flex sx={{ alignItems: "center" }}>
+          {/* <Flex sx={{ alignItems: "center" }}>
             <StaticRow
               label="Reward"
               inputId="deposit-reward"
@@ -93,9 +117,9 @@ export const ActiveDeposit: React.FC = () => {
                 <InfoIcon
                   tooltip={
                     <Card variant="tooltip" sx={{ width: "240px" }}>
-                      Although the SHADY rewards accrue every minute, the value on the UI only updates
-                      when a user transacts with the Stability Pool. Therefore you may receive more
-                      rewards than is displayed when you claim or adjust your deposit.
+                      Although the SHADY rewards accrue every minute, the value on the UI only
+                      updates when a user transacts with the Stability Pool. Therefore you may
+                      receive more rewards than is displayed when you claim or adjust your deposit.
                     </Card>
                   }
                 />
@@ -104,11 +128,18 @@ export const ActiveDeposit: React.FC = () => {
             <Flex sx={{ justifyContent: "flex-end", flexShrink: 0 }}>
               <Yield />
             </Flex>
-          </Flex>
+          </Flex> */}
         </Box>
+        <ActionDescription>Enter the amount of SIM you'd like to deposit.</ActionDescription>
+        <Flex sx={{ width: "100%" }}>
+          <Button variant="cancel" onClick={handleAdjustDeposit} sx={{ flex: 1 }}>
+            Cancel
+          </Button>
 
-        <Flex variant="layout.actions">
-          <Button variant="outline" onClick={handleAdjustDeposit}>
+          <Button sx={{ flex: 1 }}>Confirm</Button>
+        </Flex>
+        {/* <Flex variant="layout.actions" sx={{ width: "100%" }}>
+          <Button variant="outline" onClick={handleAdjustDeposit} sx={{flex:1}}>
             <Icon name="pen" size="sm" />
             &nbsp;Adjust
           </Button>
@@ -118,7 +149,7 @@ export const ActiveDeposit: React.FC = () => {
 
         {hasTrove && (
           <ClaimAndMove disabled={!hasGain}>Claim SHADY and move {COLLATERAL} to Trove</ClaimAndMove>
-        )}
+        )} */}
       </Box>
 
       {isWaitingForTransaction && <LoadingOverlay />}

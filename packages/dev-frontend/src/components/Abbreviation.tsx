@@ -7,7 +7,7 @@ type AbbreviationProps = BoxProps & {
 
 export const Abbreviation: React.FC<AbbreviationProps> = ({ children, short, ...boxProps }) => (
   <Box as="span" {...boxProps}>
-    <Box as="span" sx={{ display: ["none", "unset"] }}>
+    <Box as="span" sx={{ display: ["none", "unset"], color: "white" }}>
       {children}
     </Box>
 

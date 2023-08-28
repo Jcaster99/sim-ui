@@ -1,6 +1,8 @@
 import { Button, Flex, Image, Link, Paragraph } from "theme-ui";
-
-export const HeroSection: React.FC = () => {
+interface IConnectWallet {
+  callback?: () => void | undefined;
+}
+export const HeroSection: React.FC<IConnectWallet> = ({ callback }) => {
   return (
     <Flex
       sx={{
@@ -37,7 +39,7 @@ export const HeroSection: React.FC = () => {
           luctus, odio eu imperdiet egestas, nibh ipsum hendrerit nulla, nec rutrum dui erat et nunc.
           Praesent rutrum volutpat ipsum, ullamcorper posuere magna volutpat ac.
         </Paragraph>
-        <Button variant="outline" sx={{ width: "248px" }}>
+        <Button variant="outline" sx={{ width: "248px" }} onClick={callback}>
           Launchapp
         </Button>
         <Paragraph

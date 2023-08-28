@@ -1,5 +1,5 @@
 import React from "react";
-import { createClient, goerli, WagmiConfig } from 'wagmi';
+import { createClient, goerli, WagmiConfig } from "wagmi";
 import { polygonZkEvmTestnet, localhost } from "wagmi/chains";
 import { ConnectKitProvider, getDefaultClient } from "connectkit";
 import { Flex, Heading, ThemeProvider, Paragraph, Link } from "theme-ui";
@@ -48,9 +48,7 @@ const UnsupportedMainnetFallback: React.FC = () => (
       <Icon name="exclamation-triangle" /> This app is for testing purposes only.
     </Heading>
 
-
     <Paragraph sx={{ mb: 3 }}>Please change your network to Görli.</Paragraph>
-
 
     <Paragraph>
       If you'd like to use the Liquity Protocol on mainnet, please pick a frontend{" "}

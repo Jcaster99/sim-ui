@@ -1,6 +1,8 @@
 import { Box, Button, Flex, Grid, Image, Paragraph } from "theme-ui";
-
-export const ThirdSection: React.FC = () => {
+interface IConnectWallet {
+  callback?: () => void | undefined;
+}
+export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
   return (
     <>
       <Flex
@@ -67,7 +69,7 @@ export const ThirdSection: React.FC = () => {
               Phasellus luctus, odio eu imperdiet egestas, nibh ipsum hendrerit nulla, nec rutrum dui
               erat et nunc. Praesent rutrum volutpat ipsum, ullamcorper posuere magna volutpat ac.
             </Paragraph>
-            <Button variant="outline" sx={{ width: "248px" }}>
+            <Button variant="outline" sx={{ width: "248px" }} onClick={callback}>
               Launchapp
             </Button>
           </Flex>

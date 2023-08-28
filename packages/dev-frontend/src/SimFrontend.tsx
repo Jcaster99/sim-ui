@@ -24,75 +24,77 @@ import { LandingPage } from "./pages/LandingPage";
 import { Navbar } from "./components/Navbar";
 
 type SimFrontendProps = {
-      loader?: React.ReactNode;
+  loader?: React.ReactNode;
 };
 export const SimFrontend: React.FC<SimFrontendProps> = ({ loader }) => {
-      const { account, provider, sim } = useSim();
+  const { account, provider, sim } = useSim();
 
-      // For console tinkering ;-)
-      Object.assign(window, {
-            account,
-            provider,
-            sim: sim,
-            Trove,
-            Decimal,
-            Difference,
-            Wallet
-      });
+  // For console tinkering ;-)
+  Object.assign(window, {
+    account,
+    provider,
+    sim: sim,
+    Trove,
+    Decimal,
+    Difference,
+    Wallet
+  });
 
-      return (
-            <SimStoreProvider {...{ loader }} store={sim.store}>
-                  <Router>
-                        <TroveViewProvider>
-                              <StabilityViewProvider>
-                                    <StakingViewProvider>
-                                          <BondsProvider>
-                                                <Flex sx={{ flexDirection: "column", minHeight: "100%", background: "#000" }}>
-                                                      <Switch>
-                                                            <Route path="/" exact>
-                                                                  <LandingPage />
-                                                            </Route>
-                                                            <Flex>
-                                                                  <Navbar />
-                                                                  <Flex sx={{
-                                                                                                                                                      flexGrow: 1,
-                                                                                                                                                      flexDirection: "column",
-                                                                  background: '#000 url(./images/mainbg.png) no-repeat',
-                                                                  backgroundPosition: 'bottom',
-                                                                        backgroundSize: "680 100%",
-                                                                        marginLeft: '281px',
-                                                            }}>
-                                                                  <Flex
-                                                                        sx={{
-                                                                              display: "flex",
-                                                                              flexGrow: 1,
-                                                                              flexDirection: "column",
-                                                                                    alignItems: "center",
-                                                                                    height: '100vh',
-                                                                              overflow: 'auto'
-                                                                        }}
-                                                                  >
-                                                                        <Header>
-                                                                              <SystemStatsPopup />
-                                                                              <UserAccount />
-                                                                        </Header>
-                                                                        <Route path="/dashboard" exact>
-                                                                              <PageSwitcher />
-                                                                        </Route>
-                                                                        <Route path="/risky-troves">
-                                                                              <RiskyTrovesPage />
-                                                                        </Route>
-                                                                  </Flex>
-                                                                  </Flex>
-                                                            </Flex>
-                                                      </Switch>
-                                                </Flex>
-                                          </BondsProvider>
-                                    </StakingViewProvider>
-                              </StabilityViewProvider>
-                        </TroveViewProvider>
-                  </Router>
-                  <TransactionMonitor />
-            </SimStoreProvider>
-      );
+  return (
+    <SimStoreProvider {...{ loader }} store={sim.store}>
+      <Router>
+        <TroveViewProvider>
+          <StabilityViewProvider>
+            <StakingViewProvider>
+              <BondsProvider>
+                <Flex sx={{ flexDirection: "column", minHeight: "100%", background: "#000" }}>
+                  <Switch>
+                    <Route path="/" exact>
+                      <LandingPage />
+                    </Route>
+                    <Flex>
+                      <Navbar />
+                      <Flex
+                        sx={{
+                          flexGrow: 1,
+                          flexDirection: "column",
+                          background: "#000 url(./images/mainbg.png) no-repeat",
+                          backgroundPosition: "bottom",
+                          backgroundSize: "680 100%",
+                          marginLeft: "281px"
+                        }}
+                      >
+                        <Flex
+                          sx={{
+                            display: "flex",
+                            flexGrow: 1,
+                            flexDirection: "column",
+                            alignItems: "center",
+                            height: "100vh",
+                            overflow: "auto"
+                          }}
+                        >
+                          <Header>
+                            <SystemStatsPopup />
+                            <UserAccount />
+                          </Header>
+                          <Route path="/dashboard" exact>
+                            <PageSwitcher />
+                          </Route>
+                          <Route path="/risky-troves">
+                            <RiskyTrovesPage />
+                          </Route>
+                        </Flex>
+                      </Flex>
+                    </Flex>
+                  </Switch>
+                </Flex>
+              </BondsProvider>
+            </StakingViewProvider>
+          </StabilityViewProvider>
+        </TroveViewProvider>
+      </Router>
+      <TransactionMonitor />
+    </SimStoreProvider>
+  );
 };

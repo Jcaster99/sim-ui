@@ -1,3 +1,4 @@
+import { Box } from "theme-ui";
 import { FifthSection } from "../components/LandingPage/FifthSection";
 import { Footer } from "../components/LandingPage/Footer";
 import { FourSection } from "../components/LandingPage/FourSection";
@@ -6,16 +7,19 @@ import { HeroSection } from "../components/LandingPage/HeroSection";
 import { SecondSection } from "../components/LandingPage/SecondSection";
 import { ThirdSection } from "../components/LandingPage/ThirdSection";
 
-export const LandingPage: React.FC = () => {
+interface IHeaderLanding {
+  callback?: () => void | undefined;
+}
+export const LandingPage: React.FC<IHeaderLanding> = ({ callback }) => {
   return (
-    <>
-      <HeaderLanding />
-      <HeroSection />
-      <SecondSection />
-      <ThirdSection />
+    <Box sx={{ background: "#000" }}>
+      <HeaderLanding callback={callback} />
+      <HeroSection  callback={callback}/>
+      <SecondSection callback={callback}/>
+      <ThirdSection callback={callback}/>
       <FourSection />
       <FifthSection />
       <Footer />
-    </>
+    </Box>
   );
 };

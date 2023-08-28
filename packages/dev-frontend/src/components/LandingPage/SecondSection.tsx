@@ -1,6 +1,8 @@
 import { Button, Flex, Image, Paragraph } from "theme-ui";
-
-export const SecondSection: React.FC = () => {
+interface IConnectWallet {
+  callback?: () => void | undefined;
+}
+export const SecondSection: React.FC<IConnectWallet> = ({ callback }) => {
   return (
     <>
       <Flex
@@ -17,7 +19,7 @@ export const SecondSection: React.FC = () => {
             width: 100,
             height: 100,
             background: "url(./icons/Cube.svg)",
-            backgroundPosition: 'center',
+            backgroundPosition: "center",
             position: "absolute",
             top: 0,
             left: 32
@@ -56,7 +58,7 @@ export const SecondSection: React.FC = () => {
             luctus, odio eu imperdiet egestas, nibh ipsum hendrerit nulla, nec rutrum dui erat et
             nunc. Praesent rutrum volutpat ipsum, ullamcorper posuere magna volutpat ac.
           </Paragraph>
-          <Button variant="outline" sx={{ width: "248px" }}>
+          <Button variant="outline" sx={{ width: "248px" }} onClick={callback}>
             Launchapp
           </Button>
         </Flex>

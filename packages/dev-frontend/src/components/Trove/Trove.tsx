@@ -10,9 +10,7 @@ import { LiquidatedTrove } from "./LiquidatedTrove";
 import { Decimal } from "@sim/lib-base";
 
 export const Trove: React.FC = props => {
-      const { view } = useTroveView();
-      console.log('--view----', view);
-
+  const { view } = useTroveView();
   switch (view) {
     // loading state not needed, as main app has a loading spinner that blocks render until the liquity backend data is available
     case "ACTIVE": {
@@ -34,7 +32,8 @@ export const Trove: React.FC = props => {
       return <RedeemedTrove {...props} />;
     }
     case "NONE": {
-      return <NoTrove {...props} />;
+      // return <NoTrove {...props} />;
+      return <Opening {...props} />;
     }
   }
 };

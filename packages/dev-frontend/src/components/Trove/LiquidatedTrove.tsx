@@ -19,8 +19,8 @@ export const LiquidatedTrove: React.FC = () => {
   }, [dispatchEvent]);
 
   return (
-    <Card>
-      <Heading>Trove</Heading>
+    <Card sx={{ backgroundColor: "transparent", border: "none" }}>
+      {/* <Heading>Trove</Heading> */}
       <Box sx={{ p: [2, 3] }}>
         <InfoMessage title="Your Trove has been liquidated.">
           {hasSurplusCollateral

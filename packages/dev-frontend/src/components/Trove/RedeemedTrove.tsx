@@ -19,8 +19,8 @@ export const RedeemedTrove: React.FC = () => {
   }, [dispatchEvent]);
 
   return (
-    <Card>
-      <Heading>Trove</Heading>
+    <Card >
+      {/* <Heading>Trove</Heading> */}
       <Box sx={{ p: [2, 3] }}>
         <InfoMessage title="Your Trove has been redeemed.">
           {hasSurplusCollateral

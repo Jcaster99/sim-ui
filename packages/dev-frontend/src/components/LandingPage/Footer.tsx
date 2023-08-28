@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
           <Link href="#">
             {/* <Flex
               sx={{
-                background: "rgba(194, 195, 197,0.15 )",
+                background: "rgba(194, 195, 197,0.15 )",w
                 width: 50,
                 height: 50,
                 justifyContent: "center",

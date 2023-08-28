@@ -18,7 +18,7 @@ export const InfoIcon: React.FC<InfoIconProps> = ({
   return (
     <Tooltip message={tooltip} placement={placement} link={link}>
       &nbsp;
-      <Icon name="question-circle" size={size} />
+      <Icon name="question-circle" size={size} color="#00D6D6" />
     </Tooltip>
   );
 };

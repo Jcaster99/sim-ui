@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Box, Card } from "theme-ui";
+import { Flex, Box, Card, Label } from "theme-ui";
 
 import { CRITICAL_COLLATERAL_RATIO, Decimal, Difference, Percent } from "@sim/lib-base";
 
@@ -8,6 +8,7 @@ import { Icon } from "../Icon";
 import { StaticRow } from "./Editor";
 import { InfoIcon } from "../InfoIcon";
 import { ActionDescription } from "../ActionDescription";
+import { PendingAmount } from "../Dashboard/InfoRow";
 
 type CollateralRatioProps = {
   value?: Decimal;
@@ -19,15 +20,58 @@ export const CollateralRatio: React.FC<CollateralRatioProps> = ({ value, change 
   const changePct = change && new Percent(change);
   return (
     <>
-      <Flex>
-        <Box sx={{ mt: [2, 0], ml: 3, mr: -2, fontSize: "24px" }}>
-          <Icon name="heartbeat" />
-        </Box>
-
+      <Flex
+        sx={{
+          justifyContent: "center",
+          width: "100%",
+          flexDirection: "column",
+          alignItems: "center"
+        }}
+      >
+        <Label
+          sx={{
+            p: 0,
+            pl: 3,
+            pt: "12px",
+            mb: "8px",
+            fontSize: "18px",
+            borderColor: "transparent",
+            background: "transparent",
+            color: "white",
+            fontWeight: 500,
+            lineHeight: "28px"
+          }}
+        >
+          Collateral ratio
+        </Label>
+        <Flex sx={{ alignItems: "center" }}>
+          <Icon name="heart" style={{ height: "28px", width: "28px" }} color="#8EE8A0" />
+          <PendingAmount
+            sx={{
+              color: `${
+                value?.gt(CRITICAL_COLLATERAL_RATIO)
+                  ? "success"
+                  : value?.gt(1.2)
+                  ? "warning"
+                  : value?.lte(1.2)
+                  ? "danger"
+                  : "muted"
+              }`,
+              opacity: 1,
+              fontSize: "24px",
+              fontWeight: 700,
+              lineHeight: "32px"
+            }}
+            value={
+              change?.positive?.absoluteValue?.gt(10)
+                ? "++"
+                : change?.negative?.absoluteValue?.gt(10)
+                ? "--"
+                : changePct?.nonZeroish(2)?.prettify()
+            }
+          />
+        </Flex>
         <StaticRow
-          label="Collateral ratio"
-          inputId="trove-collateral-ratio"
-          amount={collateralRatioPct.prettify()}
           color={
             value?.gt(CRITICAL_COLLATERAL_RATIO)
               ? "success"
@@ -45,19 +89,6 @@ export const CollateralRatio: React.FC<CollateralRatioProps> = ({ value, change 
               : changePct?.nonZeroish(2)?.prettify()
           }
           pendingColor={change?.positive ? "success" : "danger"}
-          infoIcon={
-            <InfoIcon
-              tooltip={
-                <Card variant="tooltip" sx={{ width: "220px" }}>
-                  The ratio between the dollar value of the collateral and the debt (in SIM) you are
-                  depositing. While the Minimum Collateral Ratio is 110% during normal operation, it
-                  is recommended to keep the Collateral Ratio always above 150% to avoid liquidation
-                  under Recovery Mode. A Collateral Ratio above 200% or 250% is recommended for
-                  additional safety.
-                </Card>
-              }
-            />
-          }
         />
       </Flex>
       {value?.lt(1.5) && (

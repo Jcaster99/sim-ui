@@ -27,6 +27,7 @@ import {
   faPen,
   faHandPaper,
   faHeartbeat,
+  faHeart,
   faBars,
   faArrowDown
 } from "@fortawesome/free-solid-svg-icons";
@@ -63,7 +64,8 @@ library.add(
   faHeartbeat,
   faBars,
   faQuestionCircle,
-  faArrowDown
+  faArrowDown,
+  faHeart
 );
 
 const getIcon = (name: IconName): IconProp => {

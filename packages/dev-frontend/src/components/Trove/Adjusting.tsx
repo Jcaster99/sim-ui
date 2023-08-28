@@ -5,8 +5,8 @@ import {
   Decimal,
   Trove,
   Percent,
-  Difference, /*SIM_LIQUIDATION_RESERVE,*/
-} from '@sim/lib-base';
+  Difference /*SIM_LIQUIDATION_RESERVE,*/
+} from "@sim/lib-base";
 import { useSimSelector } from "@sim/lib-react";
 
 import { useStableTroveChange } from "../../hooks/useStableTroveChange";
@@ -25,7 +25,7 @@ import {
   selectForTroveChangeValidation,
   validateTroveChange
 } from "./validation/validateTroveChange";
-import { useSim } from '../../hooks/SimContext';
+import { useSim } from "../../hooks/SimContext";
 
 const selector = (state: SimStoreState) => {
   const { trove, fees, price, accountBalance, wstETHTokenAllowance } = state;
@@ -84,7 +84,14 @@ const applyUnsavedNetDebtChanges = (unsavedChanges: Difference, trove: Trove) =>
 
 export const Adjusting: React.FC = () => {
   const { dispatchEvent } = useTroveView();
-  const { trove, fees, price, accountBalance, validationContext, wstETHTokenAllowance } = useSimSelector(selector);
+  const {
+    trove,
+    fees,
+    price,
+    accountBalance,
+    validationContext,
+    wstETHTokenAllowance
+  } = useSimSelector(selector);
   const editingState = useState<string>();
   const previousTrove = useRef<Trove>(trove);
   const [collateral, setCollateral] = useState<Decimal>(trove.collateral);
@@ -97,9 +104,12 @@ export const Adjusting: React.FC = () => {
 
   const handleApprove = useCallback(() => {
     setApproved(true);
-    sim.approveWstEthTokens(Decimal.INFINITY).then(() => {
-      gasEstimationState.type = 'idle';
-    }).finally(() => setApproved(false))
+    sim
+      .approveWstEthTokens(Decimal.INFINITY)
+      .then(() => {
+        gasEstimationState.type = "idle";
+      })
+      .finally(() => setApproved(false));
   }, [dispatchEvent]);
 
   useEffect(() => {
@@ -138,7 +148,8 @@ export const Adjusting: React.FC = () => {
   const fee = isDebtIncrease
     ? feeFrom(trove, new Trove(trove.collateral, trove.debt.add(debtIncreaseAmount)), borrowingRate)
     : Decimal.ZERO;
-  const totalDebt = netDebt/*.add(SIM_LIQUIDATION_RESERVE)*/.add(fee);
+  const totalDebt = netDebt /*.add(SIM_LIQUIDATION_RESERVE)*/
+    .add(fee);
   const maxBorrowingRate = borrowingRate.add(0.005);
   const updatedTrove = isDirty ? new Trove(collateral, totalDebt) : trove;
   const feePct = new Percent(borrowingRate);
@@ -171,16 +182,16 @@ export const Adjusting: React.FC = () => {
 
   return (
     <Card>
-      <Heading>
+      {/* <Heading>
         Trove
         {isDirty && !isTransactionPending && (
           <Button variant="titleIcon" sx={{ ":enabled:hover": { color: "danger" } }} onClick={reset}>
             <Icon name="history" size="lg" />
           </Button>
         )}
-      </Heading>
+      </Heading> */}
 
-      <Box sx={{ p: [2, 3] }}>
+      <Box sx={{ p: [2, 3] }} >
         <EditableRow
           label="Collateral"
           inputId="trove-collateral"

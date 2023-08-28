@@ -73,6 +73,7 @@ const getInitialView = (troveStatus: UserTroveStatus): TroveView => {
     return "ACTIVE";
   }
   return "NONE";
+  // return "NONE";
 };
 
 const select = ({ trove: { status } }: SimStoreState) => status;

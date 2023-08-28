@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Text, Flex, Label, Input, SxProp, Button, ThemeUICSSProperties } from "theme-ui";
+import { Text, Flex, Label, Input, SxProp, Button, ThemeUICSSProperties, Image } from "theme-ui";
 
 import { Icon } from "../Icon";
 
 type RowProps = SxProp & {
-  label: string | React.ReactNode;
+  label?: string | React.ReactNode;
   labelId?: string;
   labelFor?: string;
   infoIcon?: React.ReactNode;
@@ -12,7 +12,16 @@ type RowProps = SxProp & {
 
 export const Row: React.FC<RowProps> = ({ sx, label, labelId, labelFor, children, infoIcon }) => {
   return (
-    <Flex sx={{ alignItems: "stretch", position: "relative", width: "100%", ...sx }}>
+    <Flex
+      sx={{
+        alignItems: "stretch",
+        position: "relative",
+        width: "100%",
+        background: "transparent",
+        flexDirection: "column",
+        ...sx
+      }}
+    >
       <Label
         id={labelId}
         htmlFor={labelFor}
@@ -20,10 +29,15 @@ export const Row: React.FC<RowProps> = ({ sx, label, labelId, labelFor, children
           p: 0,
           pl: 3,
           pt: "12px",
-          position: "absolute",
-          fontSize: 1,
-          border: 1,
-          borderColor: "transparent"
+          mb: "8px",
+          // position: "absolute",
+          fontSize: "14px",
+          // border: 1,
+          borderColor: "transparent",
+          background: "transparent",
+          color: "white",
+          fontWeight: 500,
+          lineHeight: "20px"
         }}
       >
         <Flex sx={{ alignItems: "center" }}>
@@ -79,7 +93,6 @@ export const StaticAmounts: React.FC<StaticAmountsProps & SxProp> = ({
   labelledBy,
   amount,
   unit,
-  color,
   pendingAmount,
   pendingColor,
   onClick,
@@ -102,12 +115,12 @@ export const StaticAmounts: React.FC<StaticAmountsProps & SxProp> = ({
     >
       {amount && (
         <Flex sx={{ alignItems: "center" }}>
-          <Text sx={{ color, fontWeight: "medium" }}>{amount}</Text>
+          <Text sx={{ color: "white", fontWeight: "medium" }}>{amount}</Text>
+          <Image src="./icons/tree.svg" sx={{ width: "32px", height: "32px" }} mx={"8px"} />
 
           {unit && (
             <>
-              &nbsp;
-              <Text sx={{ fontWeight: "light", opacity: 0.8 }}>{unit}</Text>
+              <Text sx={{ fontWeight: "light", opacity: 1, color: "white" }}>{unit}</Text>
             </>
           )}
 
@@ -134,11 +147,11 @@ const staticStyle: ThemeUICSSProperties = {
   mb: 0,
   pl: 3,
   pr: "11px",
-  pb: 0,
-  pt: "28px",
+  pb: 2,
+  pt: 2,
 
   fontSize: 3,
-
+  background: "rgba(111, 111, 115, 0.12)",
   border: 1,
   borderColor: "transparent"
 };
@@ -150,10 +163,10 @@ const editableStyle: ThemeUICSSProperties = {
   pl: 3,
   pr: "11px",
   pb: 2,
-  pt: "28px",
+  pt: 2,
 
   fontSize: 4,
-
+  backgroundColor: "rgba(111, 111, 115, 0.12)",
   boxShadow: [1, 2],
   border: 1,
   borderColor: "muted"
@@ -275,7 +288,12 @@ export const EditableRow: React.FC<EditableRowProps> = ({
         sx={{
           ...editableStyle,
           fontWeight: "medium",
-          bg: invalid ? "invalid" : "background"
+          borderColor: "transparent",
+          color: "white",
+          backgroundColor: "rgba(111, 111, 115, 0.12)",
+          ":focus-visible": {
+            outline: "none"
+          }
         }}
       />
     </Row>
@@ -284,7 +302,11 @@ export const EditableRow: React.FC<EditableRowProps> = ({
       <StaticAmounts
         sx={{
           ...editableStyle,
-          bg: invalid ? "invalid" : "background"
+          // bg: invalid ? "invalid" : "background",
+          backgroundColor:
+            "linear-gradient(143deg, #0A0A0D 0%, rgba(10, 10, 13, 0.53) 0.01%, rgba(111, 111, 115, 0.12) 100%)",
+
+          borderColor: "transparent"
         }}
         labelledBy={`${inputId}-label`}
         onClick={() => setEditing(inputId)}

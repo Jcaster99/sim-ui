@@ -9,7 +9,8 @@ export const Stability: React.FC = props => {
 
   switch (view) {
     case "NONE": {
-      return <NoDeposit {...props} />;
+      // return <NoDeposit {...props} />;
+      return <ActiveDeposit {...props} />;
     }
     case "DEPOSITING": {
       return <StabilityDepositManager {...props} />;

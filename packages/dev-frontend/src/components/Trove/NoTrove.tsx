@@ -12,7 +12,7 @@ export const NoTrove: React.FC = () => {
 
   return (
     <Card>
-      <Heading>Trove</Heading>
+      {/* <Heading>Trove</Heading> */}
       <Box sx={{ p: [2, 3] }}>
         <InfoMessage title="You haven't borrowed any SIM yet.">
           You can borrow SIM by opening a Trove.

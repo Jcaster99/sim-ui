@@ -23,8 +23,8 @@ export const ReadOnlyTrove: React.FC = () => {
 
   // console.log("READONLY TROVE", trove.collateral.prettify(4));
   return (
-    <Card>
-      <Heading>Trove</Heading>
+    <Card sx={{ backgroundColor: "transparent", border: "none" }}>
+      {/* <Heading>Trove</Heading> */}
       <Box sx={{ p: [2, 3] }}>
         <Box>
           <DisabledEditableRow

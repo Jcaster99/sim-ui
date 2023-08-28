@@ -9,8 +9,8 @@ export const NoStake: React.FC = () => {
   const { dispatch } = useStakingView();
 
   return (
-    <Card>
-      <Heading>{VE}</Heading>
+    <Card sx={{backgroundColor: 'transparent', border: 'none'}}>
+      {/* <Heading>{VE}</Heading> */}
       <Box sx={{ p: [2, 3] }}>
         <InfoMessage title={`You haven't ${VE} yet.`}>
           Lock {GT} to earn a share of borrowing and redemption fees.

@@ -7,8 +7,9 @@ import {
   Decimalish,
   Decimal,
   Trove,
-  SimStoreState, SIM_LIQUIDATION_RESERVE,
-} from '@sim/lib-base';
+  SimStoreState,
+  SIM_LIQUIDATION_RESERVE
+} from "@sim/lib-base";
 import { useSimSelector } from "@sim/lib-react";
 
 import { COIN } from "../../strings";
@@ -48,8 +49,8 @@ export const TroveEditor: React.FC<TroveEditorProps> = ({
   const collateralRatioChange = Difference.between(collateralRatio, originalCollateralRatio);
 
   return (
-    <Card>
-      <Heading>Trove</Heading>
+    <Card sx={{ backgroundColor: "transparent", border: "none" }}>
+      {/* <Heading>Trove</Heading> */}
 
       <Box sx={{ p: [2, 3] }}>
         <StaticRow

@@ -11,9 +11,10 @@ export const Staking: React.FC = () => {
       return <ReadOnlyStake />;
 
     case "ADJUSTING":
-      return <StakingManager tokenId={tokenId}/>;
+      return <StakingManager tokenId={tokenId} />;
 
     case "NONE":
-      return <NoStake />;
+      // return <NoStake />;
+      return <ReadOnlyStake />;
   }
 };

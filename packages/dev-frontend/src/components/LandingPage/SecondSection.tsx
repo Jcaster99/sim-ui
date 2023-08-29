@@ -6,16 +6,17 @@ export const SecondSection: React.FC<IConnectWallet> = ({ callback }) => {
   return (
     <>
       <Flex
-        my={120}
-        px={120}
+        my={["60px", 120]}
+        px={[4, 120]}
         sx={{
           gap: "162px",
           alignItems: "center",
           justifyContent: "space-between",
           position: "relative",
+          flexWrap: 'wrap',
           "::before": {
             content: '""',
-            display: "block",
+            display: ['none', "block"],
             width: 100,
             height: 100,
             background: "url(./icons/Cube.svg)",
@@ -26,19 +27,19 @@ export const SecondSection: React.FC<IConnectWallet> = ({ callback }) => {
           }
         }}
       >
-        <Image src="./icons/section2Img.svg" sx={{ width: "375px", height: "369px" }} />
+        <Image src="./icons/section2Img.svg" sx={{ width: "375px", height: "369px", order:[2, 1] }} />
         <Flex
           variant="right"
-          sx={{ justifyContent: "center", gap: "24px", flexDirection: "column" }}
+          sx={{ justifyContent: "center", gap: "24px", flexDirection: "column",order:[1, 2] }}
         >
           <Flex sx={{ gap: "4px" }}>
             <Image src="./icons/HeadingIcon.png" sx={{ width: "44px", height: "49px" }} />
             <Paragraph
               sx={{
                 color: "#8EE8A0",
-                fontSize: "48px",
+                fontSize: ['24px',"48px"],
                 fontWeight: 700,
-                lineHeight: "60px",
+                lineHeight: ["32px", "60px"],
                 letterSpacing: "-0.96px"
               }}
             >

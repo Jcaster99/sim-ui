@@ -7,8 +7,8 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
     <>
       <Flex
         my={120}
-        mx={60}
-        p={40}
+        mx={[4, 60]}
+        p={[4, 40]}
         sx={{
           gap: "162px",
           alignItems: "center",
@@ -17,7 +17,7 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
           background: "#0C1218",
           "::before": {
             content: '""',
-            display: "block",
+            display: ["none", "block"],
             width: 100,
             height: 100,
             background: "url(./icons/Cube.svg)",
@@ -28,19 +28,19 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
           }
         }}
       >
-        <Grid gap={2} columns={[2, "2fr 1fr"]}>
-          <Grid gap={2} columns={[2, "2fr 1fr"]}>
-            <Box bg="#C2C3C5"></Box>
+        <Grid gap={2} columns={[1, "2fr 1fr"]}>
+          <Grid gap={2} columns={[1, "2fr 1fr"]} sx={{order:[2, 1]}}>
+            <Box bg="#C2C3C5" sx={{ width: "100%", minHeight: "200px" }}></Box>
             <Grid gap={2} columns={1}>
-              <Box bg="#C2C3C5"></Box>
-              <Box bg="#C2C3C5"></Box>
+              <Box bg="#C2C3C5" sx={{ width: "100%", minHeight: "200px" }}></Box>
+              <Box bg="#C2C3C5" sx={{ width: "100%", minHeight: "200px" }}></Box>
             </Grid>
           </Grid>
           <Flex
             variant="right"
-            px={40}
+            px={[1, 40]}
             pt={40}
-            sx={{ justifyContent: "center", gap: "24px", flexDirection: "column" }}
+            sx={{ justifyContent: "center", gap: "24px", flexDirection: "column", order:[1, 2] }}
           >
             <Flex sx={{ gap: "4px" }}>
               <Image src="./icons/HeadingIcon.png" sx={{ width: "44px", height: "49px" }} />
@@ -110,7 +110,7 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
                 position: "absolute",
                 top: `100%`,
                 left: "-50%",
-                fontSize: "18px",
+                fontSize: ["12px","18px"],
                 fontWeight: 500,
                 color: "white"
               }
@@ -145,7 +145,7 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
                 position: "absolute",
                 top: `100%`,
                 left: "-50%",
-                fontSize: "18px",
+                fontSize: ["12px","18px"],
                 fontWeight: 500,
                 color: "white"
               }
@@ -180,7 +180,7 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
                 position: "absolute",
                 top: `100%`,
                 left: "-50%",
-                fontSize: "18px",
+                fontSize: ["12px","18px"],
                 fontWeight: 500,
                 color: "white"
               }
@@ -215,7 +215,7 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
                 position: "absolute",
                 top: `100%`,
                 left: "-50%",
-                fontSize: "18px",
+                fontSize: ["12px","18px"],
                 fontWeight: 500,
                 color: "white"
               }

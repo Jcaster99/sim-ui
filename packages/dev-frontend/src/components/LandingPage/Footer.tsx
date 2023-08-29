@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
             whitelist now
           </Button>
         </Flex>
-        <Flex sx={{ height: 56, width: 690 }}>
+        <Flex sx={{ height: 56, width: [300, 690] }}>
           <Input
             defaultValue="Hello"
             sx={{
@@ -72,7 +72,8 @@ export const Footer: React.FC = () => {
           <Button
             sx={{
               color: "#000",
-              borderRadius: 0
+              borderRadius: 0,
+              width: ["150px", "200px"]
             }}
           >
             SUBSCRIBE

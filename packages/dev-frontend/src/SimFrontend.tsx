@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex } from "theme-ui";
+import {Flex } from "theme-ui";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Wallet } from "@ethersproject/wallet";
 
@@ -61,7 +61,7 @@ export const SimFrontend: React.FC<SimFrontendProps> = ({ loader }) => {
                           background: "#000 url(./images/mainbg.png) no-repeat",
                           backgroundPosition: "bottom",
                           backgroundSize: "680 100%",
-                          marginLeft: "281px"
+                          marginLeft: [0, "281px"]
                         }}
                       >
                         <Flex

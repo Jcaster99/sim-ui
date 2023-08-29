@@ -433,7 +433,7 @@ const theme: Theme = {
 
       display: ["block", "none"],
 
-      bg: "rgba(255, 255, 255, 0.8)"
+      bg: "rgba(0, 0, 0, 0.8)"
     },
 
     infoMessage: {

@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Image, Paragraph } from "theme-ui";
+import { Box, Container, Flex, Grid, Image, Paragraph } from "theme-ui";
 
 import { Trove } from "../components/Trove/Trove";
 import { Stability } from "../components/Stability/Stability";
@@ -14,7 +14,7 @@ export const Dashboard: React.FC = () => {
 
   return (
     <Container variant="columns">
-      <Flex sx={{ gap: "20px", width: "100%" }}>
+      <Grid gap={2} columns={[1, 2]} mx={'auto'}>
         <Box
           py={"20px"}
           px={"40px"}
@@ -147,7 +147,6 @@ export const Dashboard: React.FC = () => {
           ) : tabActive === "staking" ? (
             // <Staking />
             <Stability />
-
           ) : (
             <Stability />
           )}
@@ -157,7 +156,7 @@ export const Dashboard: React.FC = () => {
           <SystemStats />
           <PriceManager />
         </Box>
-      </Flex>
+      </Grid>
     </Container>
   );
 };

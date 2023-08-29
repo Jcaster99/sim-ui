@@ -87,7 +87,7 @@ export const SystemStats: React.FC<SystemStatsProps> = ({ variant = "info", show
 
       <Statistic lexicon={l.TVL}>
         {total.collateral.shorten()} <Text sx={{ fontSize: 1 }}>&nbsp;{COLLATERAL}</Text>
-        <Text sx={{ fontSize: 1, color: 'white' }}>
+        <Text sx={{ fontSize: 1, color: "white" }}>
           &nbsp;(${Decimal.from(total.collateral.mul(price)).shorten()})
         </Text>
       </Statistic>
@@ -96,7 +96,9 @@ export const SystemStats: React.FC<SystemStatsProps> = ({ variant = "info", show
       {simInStabilityPoolPct && (
         <Statistic lexicon={l.STABILITY_POOL_SIM}>
           {simInStabilityPool.shorten()}
-          <Text sx={{ fontSize: 1, color: 'white' }}>&nbsp;({simInStabilityPoolPct.toString(1)})</Text>
+          <Text sx={{ fontSize: 1, color: "white" }}>
+            &nbsp;({simInStabilityPoolPct.toString(1)})
+          </Text>
         </Statistic>
       )}
       <Statistic lexicon={l.STAKED_SHADY}>{totalStakedSHADY.shorten()}</Statistic>

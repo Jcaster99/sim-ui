@@ -52,6 +52,7 @@ export const SystemStatsPopup: React.FC = () => {
         <Container
           variant="infoOverlay"
           ref={systemStatsOverlayRef}
+          sx={{zIndex: 4}}
           onClick={e => {
             if (e.target === systemStatsOverlayRef.current) {
               setSystemStatsOpen(false);

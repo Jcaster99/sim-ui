@@ -1,9 +1,10 @@
-import { Box, Button, Flex, Paragraph, Image, Input, Link } from "theme-ui";
+import { Box, Button, Flex, Paragraph, Image, Input, Link, Grid } from "theme-ui";
 
 export const Footer: React.FC = () => {
   return (
     <>
       <Flex
+        p={2}
         sx={{
           background: "#000 url(./images/footerbg.png) no-repeat",
           backgroundSize: "100% 100%",
@@ -17,7 +18,7 @@ export const Footer: React.FC = () => {
         <Box>
           <Paragraph
             sx={{
-              fontSize: "48px",
+              fontSize: ['36px', "48px"],
               fontWeight: 700,
               lineHeight: "60px",
               letterSpacing: "-0.96px",
@@ -32,17 +33,20 @@ export const Footer: React.FC = () => {
               fontSize: "18px",
               fontWeight: 500,
               lineHeight: "28px",
-              textAlign: "center"
+              textAlign: "center",
+              color: "#C2C3C5"
             }}
           >
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.{" "}
           </Paragraph>
         </Box>
-        <Flex sx={{ gap: 24 }}>
+        <Flex sx={{ gap: 24, flexWrap: "wrap", width: "100%", justifyContent: "center" }}>
           <Button
             sx={{
               background: "#5865F2",
-              borderColor: "#5865F2"
+              borderColor: "#5865F2",
+              width: ["100%", "164px"],
+              height: "52px"
             }}
           >
             <Image src="./icons/discord.svg" sx={{ width: 24, height: 18 }} />
@@ -50,13 +54,15 @@ export const Footer: React.FC = () => {
           </Button>
           <Button
             sx={{
-              color: "#000"
+              color: "#000",
+              width: ["100%", "184px"],
+              height: "52px"
             }}
           >
             whitelist now
           </Button>
         </Flex>
-        <Flex sx={{ height: 56, width: [300, 690] }}>
+        <Flex sx={{ height: 56, width: ["100%", 690] }}>
           <Input
             defaultValue="Hello"
             sx={{
@@ -79,7 +85,7 @@ export const Footer: React.FC = () => {
             SUBSCRIBE
           </Button>
         </Flex>
-        <Flex sx={{ justifyContent: "space-between", gap: 20 }}>
+          <Grid gap={20} columns={[3, null, 6]}>
           <Link href="#">
             {/* <Flex
               sx={{
@@ -91,7 +97,7 @@ export const Footer: React.FC = () => {
               }}
             >
             </Flex> */}
-              <Image src="./icons/1.png" sx={{ width: 50, height: 50 }} />
+            <Image src="./icons/1.png" sx={{ width: 50, height: 50 }} />
           </Link>
           <Link href="#">
             {/* <Flex
@@ -104,7 +110,7 @@ export const Footer: React.FC = () => {
               }}
             >
             </Flex> */}
-              <Image src="./icons/2.png" sx={{ width: 50, height: 50 }} />
+            <Image src="./icons/2.png" sx={{ width: 50, height: 50 }} />
           </Link>
           <Link href="#">
             <Flex
@@ -120,45 +126,16 @@ export const Footer: React.FC = () => {
             </Flex>
           </Link>
           <Link href="#">
-            <Flex
-              sx={{
-                background: "rgba(194, 195, 197,0.15 )",
-                width: 50,
-                height: 50,
-                justifyContent: "center",
-                alignItems: "center"
-              }}
-            >
-              <Image src="./icons/telegram.svg" sx={{ width: 27, height: 27 }} />
-            </Flex>
+              <Image src="./icons/4.svg" sx={{ width: 50, height: 50 }} />
           </Link>
           <Link href="#">
-            <Flex
-              sx={{
-                background: "rgba(194, 195, 197,0.15 )",
-                width: 50,
-                height: 50,
-                justifyContent: "center",
-                alignItems: "center"
-              }}
-            >
-              <Image src="./icons/telegram.svg" sx={{ width: 27, height: 27 }} />
-            </Flex>
+              <Image src="./icons/tiktok.svg" sx={{ width: 50, height: 50 }} />
           </Link>
           <Link href="#">
-            <Flex
-              sx={{
-                background: "rgba(194, 195, 197,0.15 )",
-                width: 50,
-                height: 50,
-                justifyContent: "center",
-                alignItems: "center"
-              }}
-            >
-              <Image src="./icons/telegram.svg" sx={{ width: 27, height: 27 }} />
-            </Flex>
+              <Image src="./icons/discordF.svg" sx={{ width: 50, height: 50 }} />
           </Link>
-        </Flex>
+          </Grid>
+         
       </Flex>
     </>
   );

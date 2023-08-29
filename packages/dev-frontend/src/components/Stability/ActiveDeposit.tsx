@@ -131,12 +131,12 @@ export const ActiveDeposit: React.FC = () => {
           </Flex> */}
         </Box>
         <ActionDescription>Enter the amount of SIM you'd like to deposit.</ActionDescription>
-        <Flex sx={{ width: "100%" }}>
-          <Button variant="cancel" onClick={handleAdjustDeposit} sx={{ flex: 1 }}>
+        <Flex sx={{ width: "100%", gap: '20px', flexWrap:['wrap', 'nowrap'] }}>
+          <Button variant="cancel" onClick={handleAdjustDeposit} sx={{ width: '100%' }}>
             Cancel
           </Button>
 
-          <Button sx={{ flex: 1 }}>Confirm</Button>
+          <Button sx={{ width: '100%' }}>Confirm</Button>
         </Flex>
         {/* <Flex variant="layout.actions" sx={{ width: "100%" }}>
           <Button variant="outline" onClick={handleAdjustDeposit} sx={{flex:1}}>

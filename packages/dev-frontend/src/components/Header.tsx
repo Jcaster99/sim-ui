@@ -13,13 +13,15 @@ export const Header: React.FC = ({ children }) => {
   return (
     <Flex
       sx={{
+        gap: '20px',
         background:
           "linear-gradient(143deg, #0A0A0D 0%, rgba(10, 10, 13, 0.53) 0.01%, rgba(111, 111, 115, 0.12) 100%)",
-        justifyContent: "space-between",
-        alignItems: "center",
-        width: "100%"
+        justifyContent:["start", "space-between"],
+        alignItems: ['start',"center"],
+        width: "100%",
+        flexDirection: ["column", "row"] 
       }}
-      px={[1, 32]}
+      px={[ 32]}
       py={24}
     >
       <Box
@@ -28,7 +30,7 @@ export const Header: React.FC = ({ children }) => {
           flex: 1,
           height: "100%",
           flexDirection: "column",
-          display: ["none", "flex"]
+          display: ["flex"]
         }}
       >
         <Paragraph
@@ -52,7 +54,6 @@ export const Header: React.FC = ({ children }) => {
           Welcome back, Mikey!
         </Paragraph>
       </Box>
-      <SideNav />
       {children}
     </Flex>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import {Flex } from "theme-ui";
+import {Box, Flex } from "theme-ui";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Wallet } from "@ethersproject/wallet";
 
@@ -22,6 +22,7 @@ import "tippy.js/dist/tippy.css";
 import { BondsProvider } from "./components/Bonds/context/BondsProvider"; // Tooltip default style
 import { LandingPage } from "./pages/LandingPage";
 import { Navbar } from "./components/Navbar";
+import { HeaderMobile } from "./components/Dashboard/HeaderMobile";
 
 type SimFrontendProps = {
   loader?: React.ReactNode;
@@ -74,8 +75,9 @@ export const SimFrontend: React.FC<SimFrontendProps> = ({ loader }) => {
                             overflow: "auto"
                           }}
                         >
+                          <HeaderMobile/>
                           <Header>
-                            <SystemStatsPopup />
+                            {/* <SystemStatsPopup /> */}
                             <UserAccount />
                           </Header>
                           <Route path="/dashboard" exact>

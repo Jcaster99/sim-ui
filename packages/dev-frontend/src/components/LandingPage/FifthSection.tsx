@@ -103,8 +103,8 @@ export const FifthSection: React.FC = () => {
   return (
     <>
       <Flex
-        my={120}
-        px={120}
+        my={[60,120]}
+        px={[1,120]}
         sx={{
           gap: "64px",
           alignItems: "center",
@@ -113,7 +113,7 @@ export const FifthSection: React.FC = () => {
           flexDirection: "column",
           "::before": {
             content: '""',
-            display: "block",
+            display: ['none', "block"],
             width: 100,
             height: 100,
             background: "url(./icons/Cube.svg)",
@@ -151,7 +151,7 @@ export const FifthSection: React.FC = () => {
             amet tempus feugiat. Aenean eget turpis eu tortor finibus bibendum a eget nibh.
           </Paragraph>
         </Box>
-        <Grid columns={[4, null, 6]}>{items}</Grid>
+        <Grid columns={[3, null, 6]}>{items}</Grid>
       </Flex>
     </>
   );

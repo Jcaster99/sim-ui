@@ -11,7 +11,7 @@ export const RiskyTrovesPage: React.FC = () => (
       <Box
         sx={{
           width: "100%",
-          px:[1,"40px"],
+          px: [1, "40px"],
           flex: 1,
           background:
             "linear-gradient(143deg, rgba(10, 10, 13, 0.41) 0%, rgba(58, 53, 82, 0.34) 100%)",
@@ -19,7 +19,7 @@ export const RiskyTrovesPage: React.FC = () => (
         }}
       >
         <Card sx={{ background: "transparent", border: "none" }}>
-          <Box sx={{ p: [2, 3],  width: "100%" }}>
+          <Box sx={{ p: [2, 3], width: "100%" }}>
             <InfoMessage title="Bot functionality">
               <Paragraph>Liquidation is expected to be carried out by bots.</Paragraph>
               <Paragraph>
@@ -35,7 +35,7 @@ export const RiskyTrovesPage: React.FC = () => (
       <Box
         sx={{
           flex: 1,
-          display: ['none', 'block']
+          display: ["none", "block"]
         }}
       >
         <SystemStats />
@@ -52,6 +52,14 @@ export const RiskyTrovesPage: React.FC = () => (
       }}
     >
       <RiskyTroves pageSize={10} />
+    </Box>
+    <Box
+      sx={{
+        width: '100%',
+        display: ["block", "none"]
+      }}
+    >
+      <SystemStats />
     </Box>
   </Container>
 );

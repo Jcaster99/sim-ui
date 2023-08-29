@@ -287,7 +287,7 @@ const theme: Theme = {
     info: {
       ...infoCard,
 
-      display: ["none", "block"]
+      display: [ "block"]
     },
 
     infoPopup: {

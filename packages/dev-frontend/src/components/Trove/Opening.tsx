@@ -280,17 +280,17 @@ export const Opening: React.FC = () => {
           setGasEstimationState={setGasEstimationState}
         />
 
-        <Flex sx={{ width: "100%", gap: "8px" }}>
-          <Button variant="cancel" sx={{flex: 1}} onClick={handleCancelPressed}>
+        <Flex sx={{ width: "100%", gap: "8px", flexWrap:['wrap', 'nowrap'] }}>
+          <Button variant="cancel" sx={{width: '100%'}} onClick={handleCancelPressed}>
             Cancel
           </Button>
 
           {wstETHTokenAllowance < collateral ? (
-            <Button disabled={approved} sx={{flex: 1}} onClick={handleApprove}>
+            <Button disabled={approved} sx={{width: '100%'}} onClick={handleApprove}>
               Approve
             </Button>
           ) : gasEstimationState.type === "inProgress" ? (
-            <Button sx={{flex: 1}} disabled>
+            <Button sx={{flex: 1, width: '100%'}} disabled>
               <Spinner size="24px" sx={{ color: "background" }} />
             </Button>
           ) : stableTroveChange ? (
@@ -303,7 +303,7 @@ export const Opening: React.FC = () => {
               Confirm
             </TroveAction>
           ) : (
-            <Button sx={{flex: 1}} disabled>Confirm</Button>
+            <Button sx={{width: '100%'}} disabled>Confirm</Button>
           )}
         </Flex>
       </Box>

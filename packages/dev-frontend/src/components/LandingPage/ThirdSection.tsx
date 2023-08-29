@@ -6,11 +6,11 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
   return (
     <>
       <Flex
-        my={120}
+        my={[4,120]}
         mx={[4, 60]}
         p={[4, 40]}
         sx={{
-          gap: "162px",
+          gap: ['60px', "162px"],
           alignItems: "center",
           justifyContent: "space-between",
           position: "relative",
@@ -29,7 +29,7 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
         }}
       >
         <Grid gap={2} columns={[1, "2fr 1fr"]}>
-          <Grid gap={2} columns={[1, "2fr 1fr"]} sx={{order:[2, 1]}}>
+          <Grid gap={2} columns={[1, "2fr 1fr"]} sx={{ order: [2, 1], display: ["none", "grid"] }}>
             <Box bg="#C2C3C5" sx={{ width: "100%", minHeight: "200px" }}></Box>
             <Grid gap={2} columns={1}>
               <Box bg="#C2C3C5" sx={{ width: "100%", minHeight: "200px" }}></Box>
@@ -40,20 +40,19 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
             variant="right"
             px={[1, 40]}
             pt={40}
-            sx={{ justifyContent: "center", gap: "24px", flexDirection: "column", order:[1, 2] }}
+            sx={{ justifyContent: "center", gap: "24px", flexDirection: "column", order: [1, 2] }}
           >
             <Flex sx={{ gap: "4px" }}>
-              <Image src="./icons/HeadingIcon.png" sx={{ width: "44px", height: "49px" }} />
               <Paragraph
                 sx={{
-                  color: "#8EE8A0",
-                  fontSize: "48px",
+                  color: "white",
+                  fontSize: "36px",
                   fontWeight: 700,
-                  lineHeight: "60px",
+                  lineHeight: "44px",
                   letterSpacing: "-0.96px"
                 }}
               >
-                Feature unique
+                PHASE 1
               </Paragraph>
             </Flex>
             <Paragraph
@@ -69,26 +68,29 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
               Phasellus luctus, odio eu imperdiet egestas, nibh ipsum hendrerit nulla, nec rutrum dui
               erat et nunc. Praesent rutrum volutpat ipsum, ullamcorper posuere magna volutpat ac.
             </Paragraph>
-            <Button variant="outline" sx={{ width: "248px" }} onClick={callback}>
+            <Button variant="outline" sx={{ width: ['100%', "248px"] }} onClick={callback}>
               Launchapp
             </Button>
           </Flex>
         </Grid>
       </Flex>
       <Flex p={60} sx={{ gap: "20px" }}>
-        <Image src="./icons/arrow-down.svg" sx={{ width: "24px", height: "24px" }} />
+        <Image
+          src="./icons/arrow-down.svg"
+          sx={{ width: "24px", height: "24px", display: ["none", "block"] }}
+        />
         <Flex
           sx={{
             width: "100%",
             flex: 1,
-            justifyContent: "space-evenly",
+            justifyContent: ['space-between', "space-evenly"],
             position: "relative",
             "::before": {
               content: '""',
               display: "block",
               width: `100%`,
               height: 1,
-              backgroundColor: "#f1f1f1",
+              backgroundColor: ['transparent', "#f1f1f1"],
               position: "absolute",
               top: `50%`
             }
@@ -110,7 +112,7 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
                 position: "absolute",
                 top: `100%`,
                 left: "-50%",
-                fontSize: ["12px","18px"],
+                fontSize: ["12px", "18px"],
                 fontWeight: 500,
                 color: "white"
               }
@@ -145,7 +147,7 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
                 position: "absolute",
                 top: `100%`,
                 left: "-50%",
-                fontSize: ["12px","18px"],
+                fontSize: ["12px", "18px"],
                 fontWeight: 500,
                 color: "white"
               }
@@ -180,7 +182,7 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
                 position: "absolute",
                 top: `100%`,
                 left: "-50%",
-                fontSize: ["12px","18px"],
+                fontSize: ["12px", "18px"],
                 fontWeight: 500,
                 color: "white"
               }
@@ -215,7 +217,7 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
                 position: "absolute",
                 top: `100%`,
                 left: "-50%",
-                fontSize: ["12px","18px"],
+                fontSize: ["12px", "18px"],
                 fontWeight: 500,
                 color: "white"
               }
@@ -235,7 +237,10 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
             ></Box>
           </Box>
         </Flex>
-        <Image src="./icons/arrowRight.svg" sx={{ width: "24px", height: "24px" }} />
+        <Image
+          src="./icons/arrowRight.svg"
+          sx={{ width: "24px", height: "24px", display: ["none", "block"] }}
+        />
       </Flex>
     </>
   );

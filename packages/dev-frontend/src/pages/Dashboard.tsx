@@ -14,7 +14,7 @@ export const Dashboard: React.FC = () => {
 
   return (
     <Container variant="columns">
-      <Grid gap={2} columns={[1, 2]} mx={'auto'}>
+      <Grid gap={2} columns={[1, 2]} mx={"auto"}>
         <Box
           py={"20px"}
           px={"40px"}
@@ -29,18 +29,23 @@ export const Dashboard: React.FC = () => {
           <Flex
             sx={{
               width: "100%",
-              justifyContent: "center",
+              justifyContent: ["start", "center"],
+              alignItems: "center",
               background:
-                "linear-gradient(143deg, #0A0A0D 0%, rgba(10, 10, 13, 0.53) 0.01%, rgba(111, 111, 115, 0.12) 100%)"
+                "linear-gradient(143deg, #0A0A0D 0%, rgba(10, 10, 13, 0.53) 0.01%, rgba(111, 111, 115, 0.12) 100%)",
+              flexDirection: ["column", "row"],
+              gap: [2, 0]
             }}
             py={"8px"}
           >
             <Flex
+            pl={[4,0]}
               sx={{
                 flexGrow: 1,
-                justifyContent: "center",
-                flexDirection: "column",
-                alignItems: "center",
+                width: "100%",
+                justifyContent:["start", "center"],
+                flexDirection: ['row', "column"],
+                alignItems: ["start", "center"],
                 cursor: "pointer",
                 background: `${
                   tabActive === "strove"
@@ -71,11 +76,13 @@ export const Dashboard: React.FC = () => {
               </Paragraph>
             </Flex>
             <Flex
+            pl={[4,0]}
               sx={{
                 flexGrow: 1,
-                justifyContent: "center",
-                flexDirection: "column",
-                alignItems: "center",
+                width: "100%",
+                justifyContent:["start", "center"],
+                flexDirection: ['row', "column"],
+                alignItems: ["start", "center"],
                 cursor: "pointer",
                 background: `${
                   tabActive === "sabilitypool"
@@ -106,11 +113,13 @@ export const Dashboard: React.FC = () => {
               </Paragraph>
             </Flex>
             <Flex
+            pl={[4,0]}
               sx={{
                 flexGrow: 1,
-                justifyContent: "center",
-                flexDirection: "column",
-                alignItems: "center",
+                width: "100%",
+                justifyContent:["start", "center"],
+                flexDirection: ['row', "column"],
+                alignItems: ["start", "center"],
                 cursor: "pointer",
                 background: `${
                   tabActive === "staking"

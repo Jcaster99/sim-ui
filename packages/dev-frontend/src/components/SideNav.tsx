@@ -9,9 +9,9 @@ export const SideNav: React.FC = () => {
 
   if (!isVisible) {
     return (
-      <Button sx={{ display: ["flex", "none"] }} variant="icon" onClick={() => setIsVisible(true)}>
-        <Icon name="bars" size="lg" />
-      </Button>
+<Image src="./icons/menu.svg" onClick={() => setIsVisible(true)} sx={{ width: 55, heigh: 52, cursor: 'pointer', ":hover":{
+    opacity: 0.8
+} }} />
     );
   }
   return (

@@ -1,10 +1,10 @@
 import React from "react";
-import { Text, Flex, Box, Heading, Button,Image } from "theme-ui";
+import { Text, Flex, Box, Heading, Button, Image } from "theme-ui";
 
 import { Decimal, SimStoreState } from "@sim/lib-base";
 import { useSimSelector } from "@sim/lib-react";
 
-import { COIN, GT, COLLATERAL } from '../strings';
+import { COIN, GT, COLLATERAL } from "../strings";
 import { useSim } from "../hooks/SimContext";
 import { shortenAddress } from "../utils/shortenAddress";
 
@@ -22,12 +22,12 @@ export const UserAccount: React.FC = () => {
   const { wstETHBalance, shadyBalance, simBalance } = useSimSelector(select);
 
   return (
-    <Flex sx={{gap:'24px'}}>
+    <Flex sx={{ gap: "24px", flexDirection: ["column", "row"] }}>
       <Box
         sx={{
-          display: ["none", "flex"],
-                          alignItems: "center",
-          gap: '24px'
+          display: ["flex"],
+          alignItems: "center",
+          gap: "24px"
         }}
       >
         {/* <Icon name="wallet" size="lg" /> */}
@@ -35,18 +35,18 @@ export const UserAccount: React.FC = () => {
         {([
           [COLLATERAL, Decimal.from(wstETHBalance)],
           [GT, Decimal.from(shadyBalance)],
-          [COIN, Decimal.from(simBalance)],
+          [COIN, Decimal.from(simBalance)]
         ] as const).map(([currency, balance], i) => (
-              <Flex key={i} sx={{ alignItems: 'center' }}>
-                   <Image src="./icons/tree.svg" sx={{ width: "32px", height: "32px" }} />
-                    <Flex  sx={{ ml: 1, flexDirection: "column" }}>
-            <Heading sx={{ fontSize: 1, color: 'white' }}>{currency}</Heading>
-            <Text sx={{ fontSize: 1, color: 'white' }}>{balance.prettify()}</Text>
-          </Flex>
+          <Flex key={i} sx={{ alignItems: "center" }}>
+            <Image src="./icons/tree.svg" sx={{ width: "32px", height: "32px" }} />
+            <Flex sx={{ ml: 1, flexDirection: "column" }}>
+              <Heading sx={{ fontSize: 1, color: "white" }}>{currency}</Heading>
+              <Text sx={{ fontSize: 1, color: "white" }}>{balance.prettify()}</Text>
+            </Flex>
           </Flex>
         ))}
-              </Box>
-              <ConnectKitButton.Custom>
+      </Box>
+      <ConnectKitButton.Custom>
         {connectKit => (
           <Button
             variant="outline"

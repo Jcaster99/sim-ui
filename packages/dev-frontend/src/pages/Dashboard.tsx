@@ -13,7 +13,7 @@ export const Dashboard: React.FC = () => {
   const [tabActive, setTabActive] = useState<string>("strove");
 
   return (
-    <Container variant="columns">
+    <Container px={4}>
       <Grid gap={2} columns={[1, 2]} mx={"auto"}>
         <Box
           py={"20px"}

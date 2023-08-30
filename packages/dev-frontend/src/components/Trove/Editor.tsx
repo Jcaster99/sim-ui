@@ -171,7 +171,7 @@ const editableStyle: ThemeUICSSProperties = {
   backgroundColor: "rgba(111, 111, 115, 0.12)",
   boxShadow: [1, 2],
   border: 1,
-  borderColor: "muted"
+  borderColor: "transparent"
 };
 
 type StaticRowProps = RowProps & StaticAmountsProps;
@@ -293,6 +293,7 @@ export const EditableRow: React.FC<EditableRowProps> = ({
           borderColor: "transparent",
           color: "white",
           backgroundColor: "rgba(111, 111, 115, 0.12)",
+          border: "none",
           ":focus-visible": {
             outline: "none"
           }

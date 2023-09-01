@@ -233,6 +233,7 @@ export const DisabledEditableRow: React.FC<DisabledEditableRowProps> = ({
     {amount ? (
       <DisabledEditableAmounts inputId={inputId} amount={amount} {...props}>
         {children}
+        <Button sx={{ fontSize: 1, p: 1, px: 3 }}>max</Button>
       </DisabledEditableAmounts>
     ) : (
       children

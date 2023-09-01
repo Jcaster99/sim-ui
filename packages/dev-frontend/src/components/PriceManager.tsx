@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Box,  Flex, Button, Label, Input } from "theme-ui";
+import { Card, Box, Flex, Button, Label, Input } from "theme-ui";
 
 import { Decimal, SimStoreState } from "@sim/lib-base";
 import { useSimSelector } from "@sim/lib-react";
@@ -37,19 +37,22 @@ export const PriceManager: React.FC = () => {
       {/* <Heading>Price feed</Heading> */}
 
       <Box sx={{ p: [2, 3] }}>
-        <Label sx={{ color: "white" }}> Price feed</Label>
+        <Label sx={{ color: "white", fontSize: "14px", fontWeight: 500 }}> Price feed</Label>
 
         <Flex px={2} sx={{ alignItems: "stretch", background: "rgba(111, 111, 115, 0.12)" }}>
-          <Label sx={{ color: "white" }}>wstETH</Label>
+          <Label sx={{ color: "white", fontSize: "16px" }}>ETH</Label>
 
-          <Label variant="unit" sx={{ background: "transparent", border: "none",color: "white" }}>
+          <Label
+            variant="unit"
+            sx={{ background: "transparent", border: "none", color: "white", fontSize: "16px" }}
+          >
             $
           </Label>
 
           <Input
             type={canSetPrice ? "number" : "text"}
             step="any"
-            sx={{ background: "transparent", border: "none",color: "white" }}
+            sx={{ background: "transparent", border: "none", color: "white", fontSize: "16px" }}
             value={editedPrice}
             onChange={e => setEditedPrice(e.target.value)}
             disabled={!canSetPrice}

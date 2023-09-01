@@ -1,14 +1,14 @@
 import React, { useCallback, useEffect } from "react";
-import { Card,  Box, Flex, Button, Label, Text } from "theme-ui";
+import { Card, Box, Flex, Button, Label, Text } from "theme-ui";
 
 import { SimStoreState } from "@sim/lib-base";
 import { useSimSelector } from "@sim/lib-react";
 
-import { COIN,  } from "../../strings";
+import { COIN } from "../../strings";
 // import { Icon } from "../Icon";
 import { LoadingOverlay } from "../LoadingOverlay";
 import { useMyTransactionState } from "../Transaction";
-import { DisabledEditableRow} from "../Trove/Editor";
+import { DisabledEditableRow } from "../Trove/Editor";
 // import { ClaimAndMove } from "./actions/ClaimAndMove";
 // import { ClaimRewards } from "./actions/ClaimRewards";
 import { useStabilityView } from "./context/StabilityViewContext";
@@ -26,7 +26,7 @@ const selector = ({ stabilityDeposit, trove, simInStabilityPool }: SimStoreState
 
 export const ActiveDeposit: React.FC = () => {
   const { dispatchEvent } = useStabilityView();
-  const { stabilityDeposit,  simInStabilityPool } = useSimSelector(selector);
+  const { stabilityDeposit, simInStabilityPool } = useSimSelector(selector);
 
   const poolShare = stabilityDeposit.currentSIM.mulDiv(100, simInStabilityPool);
 
@@ -131,12 +131,12 @@ export const ActiveDeposit: React.FC = () => {
           </Flex> */}
         </Box>
         <ActionDescription>Enter the amount of SIM you'd like to deposit.</ActionDescription>
-        <Flex sx={{ width: "100%", gap: '20px', flexWrap:['wrap', 'nowrap'] }}>
-          <Button variant="cancel" onClick={handleAdjustDeposit} sx={{ width: '100%' }}>
+        <Flex sx={{ width: "100%", gap: "20px", flexWrap: ["wrap", "nowrap"] }}>
+          <Button variant="cancel" onClick={handleAdjustDeposit} sx={{ width: "100%" }}>
             Cancel
           </Button>
 
-          <Button sx={{ width: '100%' }}>Confirm</Button>
+          <Button sx={{ width: "100%" }}>Confirm</Button>
         </Flex>
         {/* <Flex variant="layout.actions" sx={{ width: "100%" }}>
           <Button variant="outline" onClick={handleAdjustDeposit} sx={{flex:1}}>

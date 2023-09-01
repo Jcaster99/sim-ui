@@ -1,5 +1,6 @@
-import { Box, Flex, Image, Input, Paragraph, Link as ThemeLink } from "theme-ui";
+import { Box, Button, Flex, Image, Input, Paragraph, Link as ThemeLink } from "theme-ui";
 import { Link } from "./Link";
+import { Icon } from "./Icon";
 
 export const Navbar: React.FC = () => {
   return (
@@ -67,7 +68,7 @@ export const Navbar: React.FC = () => {
           <Link to="/risky-troves">
             <Flex sx={{ gap: "4px", alignItems: "center" }}>
               <Image src="./icons/rocket.svg" sx={{ width: 24, heigh: 24 }} />
-              Risky Troves
+              Risky Closet
             </Flex>
           </Link>
           <Link to="/more">
@@ -79,6 +80,55 @@ export const Navbar: React.FC = () => {
           </Link>
         </Box>
       </Flex>
+      <Box
+        px={"16px"}
+        py={"20px"}
+        sx={{
+          background:
+            "linear-gradient(143deg, #0A0A0D 0%, rgba(10, 10, 13, 0.53) 0.01%, rgba(111, 111, 115, 0.3) 100%)",
+          width: "100%"
+        }}
+      >
+        <Flex sx={{ justifyContent: "space-between", alignItems: "center", width: "100%" }}>
+          <Paragraph sx={{ fontSize: "18px", fontWeight: 600, lineHeight: "28px", color: "white" }}>
+            CTA POPUP
+          </Paragraph>
+          <Button variant="icon">
+          <Icon name="times" size="lg" color="white" />
+          </Button>
+        </Flex>
+        <Paragraph sx={{ fontSize: "14px", fontWeight: 500, lineHeight: "20px", color: "white" }}>
+          Lorem ispsum
+        </Paragraph>
+        <Box
+          my={"16px"}
+          sx={{
+            width: "100%",
+            height: "8px",
+            background: "#f1f1f1",
+            position: "relative",
+            ":after": {
+              content: '""',
+              width: `80%`,
+              height: "100%",
+              background: "#8EE8A0",
+              display: "block"
+            }
+          }}
+          data-percent={"80%"}
+        ></Box>
+        <Flex sx={{ gap: "12px" }}>
+          <Paragraph sx={{ fontSize: "14px", fontWeight: 500, lineHeight: "20px", color: "white" }}>
+            Action 1
+          </Paragraph>
+          <Paragraph
+            sx={{ fontSize: "14px", fontWeight: 500, lineHeight: "20px", color: "#8EE8A0" }}
+          >
+            Action 2
+          </Paragraph>
+        </Flex>
+      </Box>
+
       <Flex sx={{ justifyContent: "center", flexDirection: "column", alignItems: "center" }}>
         <Paragraph
           sx={{

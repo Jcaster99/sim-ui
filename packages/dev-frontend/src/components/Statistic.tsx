@@ -16,7 +16,8 @@ export const Statistic: React.FC<StatisticProps> = ({ lexicon, children }) => {
           justifyContent: "flex-start",
           flex: 1.2,
           fontWeight: 200,
-          color: "white"
+          color: "white",
+          fontSize:'14px' 
         }}
       >
         <Flex>{lexicon.term}</Flex>

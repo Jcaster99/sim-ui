@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card, Box, Paragraph, Flex, Grid } from "theme-ui";
+import { Container, Card, Box, Paragraph, Grid } from "theme-ui";
 import { SystemStats } from "../components/SystemStats";
 import { LiquidationManager } from "../components/LiquidationManager";
 import { RiskyTroves } from "../components/RiskyTroves";

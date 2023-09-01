@@ -1,9 +1,9 @@
-import { Heading, Box, Card, Flex, Button } from "theme-ui";
+import { Box, Card, Flex, Button } from "theme-ui";
 
 import { SimStoreState } from "@sim/lib-base";
 import { useSimSelector } from "@sim/lib-react";
 
-import { COIN, GT, VE } from "../../strings";
+import { COIN, GT } from "../../strings";
 
 import { StaticRow } from "../Trove/Editor";
 import { LoadingOverlay } from "../LoadingOverlay";

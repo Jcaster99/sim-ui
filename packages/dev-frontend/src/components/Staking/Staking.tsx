@@ -1,7 +1,7 @@
 import { useStakingView } from "./context/StakingViewContext";
 import { ReadOnlyStake } from "./ReadOnlyStake";
 import { StakingManager } from "./StakingManager";
-import { NoStake } from "./NoStake";
+// import { NoStake } from "./NoStake";
 
 export const Staking: React.FC = () => {
   const { view, tokenId } = useStakingView();

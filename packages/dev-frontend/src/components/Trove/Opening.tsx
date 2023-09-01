@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Flex, Button, Box, Card, Heading, Spinner } from "theme-ui";
+import { Flex, Button, Box, Card, Spinner } from "theme-ui";
 import {
   SimStoreState,
   Decimal,
@@ -16,11 +16,11 @@ import { useMyTransactionState } from "../Transaction";
 import { TroveAction } from "./TroveAction";
 import { useTroveView } from "./context/TroveViewContext";
 import { COIN } from "../../strings";
-import { Icon } from "../Icon";
+// import { Icon } from "../Icon";
 import { InfoIcon } from "../InfoIcon";
 import { LoadingOverlay } from "../LoadingOverlay";
 import { CollateralRatio } from "./CollateralRatio";
-import { EditableRow, StaticRow } from "./Editor";
+import { EditableRow } from "./Editor";
 import { ExpensiveTroveChangeWarning, GasEstimationState } from "./ExpensiveTroveChangeWarning";
 import {
   selectForTroveChangeValidation,
@@ -97,12 +97,12 @@ export const Opening: React.FC = () => {
       .approveWstEthTokens(Decimal.INFINITY)
       .then(() => (gasEstimationState.type = "idle"))
       .finally(() => setApproved(false));
-  }, [dispatchEvent]);
+  }, [gasEstimationState, sim]);
 
-  const reset = useCallback(() => {
-    setCollateral(Decimal.ZERO);
-    setBorrowAmount(Decimal.ZERO);
-  }, []);
+  // const reset = useCallback(() => {
+  //   setCollateral(Decimal.ZERO);
+  //   setBorrowAmount(Decimal.ZERO);
+  // }, []);
 
   useEffect(() => {
     if (!collateral.isZero && borrowAmount.isZero) {
@@ -280,17 +280,17 @@ export const Opening: React.FC = () => {
           setGasEstimationState={setGasEstimationState}
         />
 
-        <Flex sx={{ width: "100%", gap: "8px", flexWrap:['wrap', 'nowrap'] }}>
-          <Button variant="cancel" sx={{width: '100%'}} onClick={handleCancelPressed}>
+        <Flex sx={{ width: "100%", gap: "8px", flexWrap: ["wrap", "nowrap"] }}>
+          <Button variant="cancel" sx={{ width: "100%" }} onClick={handleCancelPressed}>
             Cancel
           </Button>
 
           {wstETHTokenAllowance < collateral ? (
-            <Button disabled={approved} sx={{width: '100%'}} onClick={handleApprove}>
+            <Button disabled={approved} sx={{ width: "100%" }} onClick={handleApprove}>
               Approve
             </Button>
           ) : gasEstimationState.type === "inProgress" ? (
-            <Button sx={{flex: 1, width: '100%'}} disabled>
+            <Button sx={{ flex: 1, width: "100%" }} disabled>
               <Spinner size="24px" sx={{ color: "background" }} />
             </Button>
           ) : stableTroveChange ? (
@@ -303,7 +303,9 @@ export const Opening: React.FC = () => {
               Confirm
             </TroveAction>
           ) : (
-            <Button sx={{width: '100%'}} disabled>Confirm</Button>
+            <Button sx={{ width: "100%" }} disabled>
+              Confirm
+            </Button>
           )}
         </Flex>
       </Box>

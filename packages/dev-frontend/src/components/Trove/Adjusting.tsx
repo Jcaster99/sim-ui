@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
-import { Flex, Button, Box, Card, Heading } from "theme-ui";
+import { Flex, Button, Box, Card } from "theme-ui";
 import {
   SimStoreState,
   Decimal,
@@ -15,7 +15,7 @@ import { useMyTransactionState } from "../Transaction";
 import { TroveAction } from "./TroveAction";
 import { useTroveView } from "./context/TroveViewContext";
 import { COIN } from "../../strings";
-import { Icon } from "../Icon";
+// import { Icon } from "../Icon";
 import { InfoIcon } from "../InfoIcon";
 import { LoadingOverlay } from "../LoadingOverlay";
 import { CollateralRatio } from "./CollateralRatio";
@@ -136,10 +136,10 @@ export const Adjusting: React.FC = () => {
     dispatchEvent("CANCEL_ADJUST_TROVE_PRESSED");
   }, [dispatchEvent]);
 
-  const reset = useCallback(() => {
-    setCollateral(trove.collateral);
-    setNetDebt(trove.netDebt);
-  }, [trove.collateral, trove.netDebt]);
+  // const reset = useCallback(() => {
+  //   setCollateral(trove.collateral);
+  //   setNetDebt(trove.netDebt);
+  // }, [trove.collateral, trove.netDebt]);
 
   const isDirty = !collateral.eq(trove.collateral) || !netDebt.eq(trove.netDebt);
   const isDebtIncrease = netDebt.gt(trove.netDebt);
@@ -191,7 +191,7 @@ export const Adjusting: React.FC = () => {
         )}
       </Heading> */}
 
-      <Box sx={{ p: [2, 3] }} >
+      <Box sx={{ p: [2, 3] }}>
         <EditableRow
           label="Collateral"
           inputId="trove-collateral"

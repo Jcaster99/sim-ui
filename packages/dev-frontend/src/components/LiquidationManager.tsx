@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Box, Heading, Flex, Button, Label, Input } from "theme-ui";
+import { Card, Box,  Flex, Button, Label, Input } from "theme-ui";
 
 import { useSim } from "../hooks/SimContext";
 

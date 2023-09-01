@@ -1,6 +1,6 @@
 import { ConnectKitButton } from "connectkit";
-import { Box, Button, Flex } from "theme-ui";
-import { Icon } from "./Icon";
+// import { Box, Button, Flex } from "theme-ui";
+// import { Icon } from "./Icon";
 import { LandingPage } from "../pages/LandingPage";
 
 type WalletConnectorProps = {

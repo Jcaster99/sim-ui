@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Box, Card } from "theme-ui";
+import {  Box, Card } from "theme-ui";
 
 import {
   Percent,

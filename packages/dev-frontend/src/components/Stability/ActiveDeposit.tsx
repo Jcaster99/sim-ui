@@ -1,21 +1,21 @@
 import React, { useCallback, useEffect } from "react";
-import { Card, Heading, Box, Flex, Button, Label, Text } from "theme-ui";
+import { Card,  Box, Flex, Button, Label, Text } from "theme-ui";
 
 import { SimStoreState } from "@sim/lib-base";
 import { useSimSelector } from "@sim/lib-react";
 
-import { COIN, COLLATERAL, GT } from "../../strings";
-import { Icon } from "../Icon";
+import { COIN,  } from "../../strings";
+// import { Icon } from "../Icon";
 import { LoadingOverlay } from "../LoadingOverlay";
 import { useMyTransactionState } from "../Transaction";
-import { DisabledEditableRow, StaticRow } from "../Trove/Editor";
-import { ClaimAndMove } from "./actions/ClaimAndMove";
-import { ClaimRewards } from "./actions/ClaimRewards";
+import { DisabledEditableRow} from "../Trove/Editor";
+// import { ClaimAndMove } from "./actions/ClaimAndMove";
+// import { ClaimRewards } from "./actions/ClaimRewards";
 import { useStabilityView } from "./context/StabilityViewContext";
-import { RemainingSHADY } from "./RemainingSHADY";
-import { Yield } from "./Yield";
-import { InfoIcon } from "../InfoIcon";
-import { InfoRow } from "../Dashboard/InfoRow";
+// import { RemainingSHADY } from "./RemainingSHADY";
+// import { Yield } from "./Yield";
+// import { InfoIcon } from "../InfoIcon";
+// import { InfoRow } from "../Dashboard/InfoRow";
 import { ActionDescription } from "../ActionDescription";
 
 const selector = ({ stabilityDeposit, trove, simInStabilityPool }: SimStoreState) => ({
@@ -26,7 +26,7 @@ const selector = ({ stabilityDeposit, trove, simInStabilityPool }: SimStoreState
 
 export const ActiveDeposit: React.FC = () => {
   const { dispatchEvent } = useStabilityView();
-  const { stabilityDeposit, trove, simInStabilityPool } = useSimSelector(selector);
+  const { stabilityDeposit,  simInStabilityPool } = useSimSelector(selector);
 
   const poolShare = stabilityDeposit.currentSIM.mulDiv(100, simInStabilityPool);
 
@@ -34,9 +34,9 @@ export const ActiveDeposit: React.FC = () => {
     dispatchEvent("ADJUST_DEPOSIT_PRESSED");
   }, [dispatchEvent]);
 
-  const hasReward = !stabilityDeposit.shadyReward.isZero;
-  const hasGain = !stabilityDeposit.collateralGain.isZero;
-  const hasTrove = !trove.isEmpty;
+  // const hasReward = !stabilityDeposit.shadyReward.isZero;
+  // const hasGain = !stabilityDeposit.collateralGain.isZero;
+  // const hasTrove = !trove.isEmpty;
 
   const transactionId = "stability-deposit";
   const transactionState = useMyTransactionState(transactionId);

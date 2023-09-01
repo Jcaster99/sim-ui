@@ -1,14 +1,14 @@
 import React from "react";
 import { Box, Flex, Paragraph } from "theme-ui";
-import { AddressZero } from "@ethersproject/constants";
-import { useSim } from "../hooks/SimContext";
-import { SideNav } from "./SideNav";
+// import { AddressZero } from "@ethersproject/constants";
+// import { useSim } from "../hooks/SimContext";
+// import { SideNav } from "./SideNav";
 
 export const Header: React.FC = ({ children }) => {
-  const {
-    config: { frontendTag }
-  } = useSim();
-  const isFrontendRegistered = frontendTag === AddressZero;
+  // const {
+  //   config: { frontendTag }
+  // } = useSim();
+  // const isFrontendRegistered = frontendTag === AddressZero;
 
   return (
     <Flex

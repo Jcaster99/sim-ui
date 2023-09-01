@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { Card, Heading, Box, Flex, Button } from "theme-ui";
+import { Card,  Box, Flex, Button } from "theme-ui";
 import { useSimSelector } from "@sim/lib-react";
 import { SimStoreState } from "@sim/lib-base";
 import { DisabledEditableRow } from "./Editor";

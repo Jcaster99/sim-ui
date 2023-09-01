@@ -1,12 +1,12 @@
 import React from "react";
-import { Flex, Box, Card, Label } from "theme-ui";
+import { Flex, Label } from "theme-ui";
 
 import { CRITICAL_COLLATERAL_RATIO, Decimal, Difference, Percent } from "@sim/lib-base";
 
 import { Icon } from "../Icon";
 
 import { StaticRow } from "./Editor";
-import { InfoIcon } from "../InfoIcon";
+// import { InfoIcon } from "../InfoIcon";
 import { ActionDescription } from "../ActionDescription";
 import { PendingAmount } from "../Dashboard/InfoRow";
 
@@ -16,7 +16,7 @@ type CollateralRatioProps = {
 };
 
 export const CollateralRatio: React.FC<CollateralRatioProps> = ({ value, change }) => {
-  const collateralRatioPct = new Percent(value ?? { toString: () => "N/A" });
+  // const collateralRatioPct = new Percent(value ?? { toString: () => "N/A" });
   const changePct = change && new Percent(change);
   return (
     <>

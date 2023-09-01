@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
-import { Card, Button, Text, Box, Heading, Flex } from "theme-ui";
+import { Card, Button, Text, Box, Flex } from "theme-ui";
 
 import {
   Percent,

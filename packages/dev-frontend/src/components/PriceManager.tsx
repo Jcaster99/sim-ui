@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Box, Heading, Flex, Button, Label, Input } from "theme-ui";
+import { Card, Box,  Flex, Button, Label, Input } from "theme-ui";
 
 import { Decimal, SimStoreState } from "@sim/lib-base";
 import { useSimSelector } from "@sim/lib-react";

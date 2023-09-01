@@ -1,7 +1,7 @@
 import React from "react";
 import { StabilityDepositManager } from "./StabilityDepositManager";
 import { ActiveDeposit } from "./ActiveDeposit";
-import { NoDeposit } from "./NoDeposit";
+// import { NoDeposit } from "./NoDeposit";
 import { useStabilityView } from "./context/StabilityViewContext";
 
 export const Stability: React.FC = props => {

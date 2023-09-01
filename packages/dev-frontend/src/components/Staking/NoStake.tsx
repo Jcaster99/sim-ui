@@ -1,4 +1,4 @@
-import { Card, Heading, Box, Flex, Button } from "theme-ui";
+import { Card, Box, Flex, Button } from "theme-ui";
 
 import { VE, GT } from "../../strings";
 

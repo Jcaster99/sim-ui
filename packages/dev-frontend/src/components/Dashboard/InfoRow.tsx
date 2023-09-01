@@ -1,4 +1,4 @@
-import { Flex, Label, SxProp, Text, Image } from "theme-ui";
+import { Flex, Label, SxProp, Text } from "theme-ui";
 import { Icon } from "../Icon";
 
 interface IInfoRowProps {

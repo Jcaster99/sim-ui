@@ -287,7 +287,7 @@ const theme: Theme = {
     info: {
       ...infoCard,
 
-      display: [ "block"]
+      display: ["block"]
     },
 
     infoPopup: {
@@ -496,19 +496,20 @@ const theme: Theme = {
     nav: {
       px: 3,
       py: 2,
-      fontWeight: "medium",
-      fontSize: 2,
-      textTransform: "uppercase",
+      fontWeight: 500,
+      fontSize: "18px",
+      lineHeight: "28px",
+      // textTransform: "uppercase",
       letterSpacing: "2px",
-      width: '100%',
-              color: "white",
-              borderLeft: '4px solid transparent',
-              mt: [3, "auto"],
-              "&.active": {
-              color: "white",
-                    background: `linear-gradient(143deg, #0A0D0A 0%, rgba(10, 10, 13, 0.53) 0.01%, rgba(19, 255, 156, 0.12) 100%)`,
-                    borderLeft: '4px solid #8EE8A0'
-                }
+      width: "100%",
+      color: "white",
+      borderLeft: "4px solid transparent",
+      mt: [3, "auto"],
+      "&.active": {
+        color: "white",
+        background: `linear-gradient(143deg, #0A0D0A 0%, rgba(10, 10, 13, 0.53) 0.01%, rgba(19, 255, 156, 0.12) 100%)`,
+        borderLeft: "4px solid #8EE8A0"
+      }
     }
   }
 };

@@ -14,7 +14,7 @@ export const Dashboard: React.FC = () => {
 
   return (
     <Container px={4}>
-      <Grid gap={2} columns={[1, 2]} mx={"auto"}>
+      <Grid gap={2} columns={[1, "3fr 2fr"]} mx={"auto"}>
         <Box
           py={"20px"}
           px={"40px"}
@@ -72,7 +72,7 @@ export const Dashboard: React.FC = () => {
                   color: tabActive === "strove" ? "#8EE8A0" : "white"
                 }}
               >
-                strove
+                Closet
               </Paragraph>
             </Flex>
             <Flex

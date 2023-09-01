@@ -3,3 +3,11 @@
 html {
   height: 100%;
 }
+@font-face {
+  font-family: SpaceGrotesk;
+  src: url(../public/font/SpaceGrotesk-Regular.ttf);
+}
+
+* {
+  font-family: SpaceGrotesk !important;
+}

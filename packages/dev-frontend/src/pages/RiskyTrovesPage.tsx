@@ -1,13 +1,13 @@
 import React from "react";
-import { Container, Card, Box, Paragraph, Flex } from "theme-ui";
+import { Container, Card, Box, Paragraph, Flex, Grid } from "theme-ui";
 import { SystemStats } from "../components/SystemStats";
 import { LiquidationManager } from "../components/LiquidationManager";
 import { RiskyTroves } from "../components/RiskyTroves";
 import { InfoMessage } from "../components/InfoMessage";
 
 export const RiskyTrovesPage: React.FC = () => (
-  <Container variant="columns">
-    <Flex sx={{ gap: "20px", width: "100%" }}>
+  <Container px={4}>
+    <Grid gap={"20px"} columns={[1, "3fr 2fr"]} mx={"auto"}>
       <Box
         sx={{
           width: "100%",
@@ -40,7 +40,8 @@ export const RiskyTrovesPage: React.FC = () => (
       >
         <SystemStats />
       </Box>
-    </Flex>
+    </Grid>
+
     <Box
       mt={"20px"}
       px={[1, "40px"]}
@@ -55,7 +56,7 @@ export const RiskyTrovesPage: React.FC = () => (
     </Box>
     <Box
       sx={{
-        width: '100%',
+        width: "100%",
         display: ["block", "none"]
       }}
     >

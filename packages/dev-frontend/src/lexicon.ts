@@ -19,7 +19,7 @@ export const TVL: Lexicon = {
 };
 
 export const STAKED_SHADY: Lexicon = {
-  term: "Locked SHADY in xSHADY",
+  term: "Staked SHADY",
   description: "The total amount of SHADY that is locked for earning fee revenue."
 };
 
@@ -60,8 +60,8 @@ export const SHADY: Lexicon = {
 };
 
 export const TROVES: Lexicon = {
-  term: "Troves",
-  description: "The total number of active Troves in the system."
+  term: "Closet",
+  description: "The total number of active Closet in the system."
 };
 
 export const SIM_SUPPLY: Lexicon = {

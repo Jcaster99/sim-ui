@@ -28,7 +28,7 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
           }
         }}
       >
-        <Grid gap={2} columns={[1, "2fr 1fr"]} sx={{width: "100%"}}>
+        <Grid gap={2} columns={[1, 1,1, "2fr 1fr"]} sx={{ width: "100%" }}>
           <Grid gap={2} columns={[1, "2fr 1fr"]} sx={{ order: [2, 1], display: ["none", "grid"] }}>
             <Box bg="#C2C3C5" sx={{ width: "100%", minHeight: "200px" }}></Box>
             <Grid gap={2} columns={1}>

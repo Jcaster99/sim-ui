@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
             sx={{
               background: "#5865F2",
               borderColor: "#5865F2",
-              width: ["100%", "164px"],
+              width: ["100%", "184px"],
               height: "52px"
             }}
           >

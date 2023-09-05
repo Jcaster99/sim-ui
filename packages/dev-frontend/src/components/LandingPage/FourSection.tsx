@@ -4,7 +4,7 @@ import { Collapse } from "./Collapse.tsx/Collapse";
 export const FourSection: React.FC = () => {
   return (
     <Box my={60} mx={[4, 60]}>
-      <Grid gap={50} columns={[1, 2]}>
+      <Grid gap={50} columns={[1,1,1, 2]}>
         <Flex sx={{ gap: 24, flexDirection: "column", order: [2, 1] }}>
           <Collapse
             title="Who are the team behind the project?"

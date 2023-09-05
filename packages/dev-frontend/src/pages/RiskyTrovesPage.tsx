@@ -6,7 +6,7 @@ import { RiskyTroves } from "../components/RiskyTroves";
 import { InfoMessage } from "../components/InfoMessage";
 
 export const RiskyTrovesPage: React.FC = () => (
-  <Container px={4}>
+  <Container px={[1, 4]}>
     <Grid gap={"20px"} columns={[1, "3fr 2fr"]} mx={"auto"}>
       <Box
         sx={{

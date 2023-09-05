@@ -6,12 +6,10 @@ export const HeroSection: React.FC<IConnectWallet> = ({ callback }) => {
   return (
     <Flex
       sx={{
-        background: [
-          "#000 url(./images/mainbg.png) no-repeat",
-          "#000 url(./images/herobg.png) no-repeat"
-        ],
-        backgroundSize: ["100% 100%","100% 100%"],
-        height: "680px"
+        background: "#000 url(./images/mainbg.png) no-repeat",
+        backgroundSize: ["100% 100%", "100% 100%"],
+        height: "680px",
+        flexWrap: "wrap"
       }}
     >
       <Flex px={4} sx={{ justifyContent: "center", gap: "24px", flexDirection: "column" }}>
@@ -78,6 +76,11 @@ export const HeroSection: React.FC<IConnectWallet> = ({ callback }) => {
           </Link>
         </Flex>
       </Flex>
+      <Image
+        src="./images/3.png"
+        sx={{ width: ["588px"], height: ["642px"], display: ["none", "block"] }}
+        mx={"auto"}
+      />
     </Flex>
   );
 };

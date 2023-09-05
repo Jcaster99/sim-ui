@@ -13,11 +13,11 @@ export const Dashboard: React.FC = () => {
   const [tabActive, setTabActive] = useState<string>("strove");
 
   return (
-    <Container px={4}>
+    <Container px={[1, 4]}>
       <Grid gap={2} columns={[1, "3fr 2fr"]} mx={"auto"}>
         <Box
           py={"20px"}
-          px={"40px"}
+          px={[2, "40px"]}
           mt={4}
           sx={{
             flex: 1,
@@ -39,12 +39,12 @@ export const Dashboard: React.FC = () => {
             py={"8px"}
           >
             <Flex
-            pl={[4,0]}
+              pl={[4, 0]}
               sx={{
                 flexGrow: 1,
                 width: "100%",
-                justifyContent:["start", "center"],
-                flexDirection: ['row', "column"],
+                justifyContent: ["start", "center"],
+                flexDirection: ["row", "column"],
                 alignItems: ["start", "center"],
                 cursor: "pointer",
                 background: `${
@@ -76,12 +76,12 @@ export const Dashboard: React.FC = () => {
               </Paragraph>
             </Flex>
             <Flex
-            pl={[4,0]}
+              pl={[4, 0]}
               sx={{
                 flexGrow: 1,
                 width: "100%",
-                justifyContent:["start", "center"],
-                flexDirection: ['row', "column"],
+                justifyContent: ["start", "center"],
+                flexDirection: ["row", "column"],
                 alignItems: ["start", "center"],
                 cursor: "pointer",
                 background: `${
@@ -113,12 +113,12 @@ export const Dashboard: React.FC = () => {
               </Paragraph>
             </Flex>
             <Flex
-            pl={[4,0]}
+              pl={[4, 0]}
               sx={{
                 flexGrow: 1,
                 width: "100%",
-                justifyContent:["start", "center"],
-                flexDirection: ['row', "column"],
+                justifyContent: ["start", "center"],
+                flexDirection: ["row", "column"],
                 alignItems: ["start", "center"],
                 cursor: "pointer",
                 background: `${

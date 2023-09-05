@@ -12,11 +12,11 @@ interface IHeaderLanding {
 }
 export const LandingPage: React.FC<IHeaderLanding> = ({ callback }) => {
   return (
-    <Box sx={{ background: "#000" }}>
+    <Box sx={{ background: "#000" }} mx={"auto"}>
       <HeaderLanding callback={callback} />
-      <HeroSection  callback={callback}/>
-      <SecondSection callback={callback}/>
-      <ThirdSection callback={callback}/>
+      <HeroSection callback={callback} />
+      <SecondSection callback={callback} />
+      <ThirdSection callback={callback} />
       <FourSection />
       <FifthSection />
       <Footer />

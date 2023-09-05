@@ -27,8 +27,12 @@ export const FourSection: React.FC = () => {
             volutpat venenatis, risus faucibus."
           />
         </Flex>
-        <Box mx={"auto"} sx={{order: [1, 2]}}> 
-          <Image src="./icons/sectionFour.svg" sx={{ width: 533, height: 512 }} />
+        <Box mx={"auto"} sx={{ order: [1, 2] }}>
+          <Image
+            src="./images/2.png"
+            // src="./icons/sectionFour.svg"
+            sx={{ width: 533, height: 512 }}
+          />
         </Box>
       </Grid>
     </Box>

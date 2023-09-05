@@ -28,8 +28,9 @@ export const SecondSection: React.FC<IConnectWallet> = ({ callback }) => {
         }}
       >
         <Image
-          src="./icons/section2Img.svg"
-          sx={{ width: "375px", height: "369px", order: [2, 1], mx: ['auto'] }}
+          // src="./icons/section2Img.svg"
+          src="./images/1.png"
+          sx={{ width: "375px", height: "369px", order: [2, 1], mx: ["auto"] }}
         />
         <Flex
           variant="right"

@@ -13,7 +13,7 @@ export const HeroSection: React.FC<IConnectWallet> = ({ callback }) => {
         width: "100%"
       }}
     >
-      <Grid gap={2} columns={[1, 1, null, 2]} sx={{ width: "100%" }}>
+      <Grid gap={2} columns={[1, 1, 1, "2fr 3fr"]} sx={{ width: "100%" }}>
         <Flex px={4} sx={{ justifyContent: "center", gap: "24px", flexDirection: "column" }}>
           <Flex sx={{ gap: "4px" }}>
             <Image

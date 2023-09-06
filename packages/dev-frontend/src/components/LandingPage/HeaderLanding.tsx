@@ -30,7 +30,12 @@ export const HeaderLanding: React.FC<IHeaderLanding> = ({ callback }) => {
           <Button
             onClick={callback}
             variant="primary"
-            sx={{ background: "#8EE8A0", width: ["124px", "248px"], display: ["none", "block"] }}
+            sx={{
+              background: "#8EE8A0",
+              width: ["124px", "248px"],
+              display: ["none", "block"],
+              color: "#000"
+            }}
           >
             Launchapp
           </Button>

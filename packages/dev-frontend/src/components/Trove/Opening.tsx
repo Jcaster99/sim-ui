@@ -300,11 +300,11 @@ export const Opening: React.FC = () => {
               maxBorrowingRate={maxBorrowingRate}
               borrowingFeeDecayToleranceMinutes={60}
             >
-              Confirm
+              Approve
             </TroveAction>
           ) : (
             <Button sx={{ width: "100%" }} disabled>
-              Confirm
+              Approve
             </Button>
           )}
         </Flex>

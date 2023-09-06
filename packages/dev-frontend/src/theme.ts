@@ -7,7 +7,8 @@ const baseColors = {
   green: "#28c081",
   yellow: "#fd9d28",
   red: "#dc2c10",
-  lightRed: "#ff755f"
+  lightRed: "#ff755f",
+  white: "#ffffff"
 };
 
 const colors = {
@@ -45,9 +46,9 @@ const button: ThemeUIStyleObject = {
   color: "white",
   border: 1,
   "&:hover": {
-    color: "background",
-    bg: "background",
-    opacity: 0.5
+    color: "#000",
+    bg: "background"
+    // opacity: 0.5
   },
   fontWeight: "bold",
 
@@ -205,22 +206,27 @@ const theme: Theme = {
       borderColor: "primary",
 
       ":enabled:hover": {
-        bg: "primary",
-        borderColor: "primary",
-        opacity: 0.8
+        bg: "white",
+        borderColor: "#fff"
+        // opacity: 0.8
       }
     },
 
     outline: {
       ...button,
-      ...buttonOutline("primary", "secondary")
+      ...buttonOutline("primary", "primary")
     },
 
     cancel: {
       ...button,
-      ...buttonOutline("text", "text"),
-
-      opacity: 0.8
+      bg: "#1D2939",
+      borderColor: "#1D2939",
+      opacity: 0.8,
+      ":enabled:hover": {
+        bg: "#1D2939",
+        opacity: 1,
+        color: "white"
+      }
     },
 
     danger: {

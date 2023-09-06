@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
         <Box>
           <Paragraph
             sx={{
-              fontSize: ['36px', "48px"],
+              fontSize: ["36px", "48px"],
               fontWeight: 700,
               lineHeight: "60px",
               letterSpacing: "-0.96px",
@@ -46,10 +46,18 @@ export const Footer: React.FC = () => {
               background: "#5865F2",
               borderColor: "#5865F2",
               width: ["100%", "184px"],
-              height: "52px"
+              height: "52px",
+              ":hover": {
+                color: "#5865F2",
+                "div:nth-of-type(1)": {
+                  background: "url(./icons/DiscordFill.svg) 100%"
+                }
+              }
             }}
           >
-            <Image src="./icons/discord.svg" sx={{ width: 24, height: 18 }} />
+            <Box
+              sx={{ mr: "5px", width: 24, height: 18, background: "url(./icons/Discord.svg) 100%" }}
+            ></Box>
             Discord
           </Button>
           <Button
@@ -85,7 +93,7 @@ export const Footer: React.FC = () => {
             SUBSCRIBE
           </Button>
         </Flex>
-          <Grid gap={20} columns={[3, null, 6]}>
+        <Grid gap={20} columns={[3, null, 6]}>
           <Link href="#">
             {/* <Flex
               sx={{
@@ -126,16 +134,15 @@ export const Footer: React.FC = () => {
             </Flex>
           </Link>
           <Link href="#">
-              <Image src="./icons/4.svg" sx={{ width: 50, height: 50 }} />
+            <Image src="./icons/4.svg" sx={{ width: 50, height: 50 }} />
           </Link>
           <Link href="#">
-              <Image src="./icons/tiktok.svg" sx={{ width: 50, height: 50 }} />
+            <Image src="./icons/tiktok.svg" sx={{ width: 50, height: 50 }} />
           </Link>
           <Link href="#">
-              <Image src="./icons/discordF.svg" sx={{ width: 50, height: 50 }} />
+            <Image src="./icons/discordF.svg" sx={{ width: 50, height: 50 }} />
           </Link>
-          </Grid>
-         
+        </Grid>
       </Flex>
     </>
   );

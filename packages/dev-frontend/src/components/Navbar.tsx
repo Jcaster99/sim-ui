@@ -94,7 +94,7 @@ export const Navbar: React.FC = () => {
             CTA POPUP
           </Paragraph>
           <Button variant="icon">
-          <Icon name="times" size="lg" color="white" />
+            <Icon name="times" size="lg" color="white" />
           </Button>
         </Flex>
         <Paragraph sx={{ fontSize: "14px", fontWeight: 500, lineHeight: "20px", color: "white" }}>

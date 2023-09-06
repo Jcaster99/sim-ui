@@ -32,7 +32,7 @@ export const SideNav: React.FC = () => {
           flexDirection: "column",
           gap: 24,
           borderRight: `2px solid rgba(142, 232, 160, 0.20)`,
-          width: "280px",
+          width: "100%",
           height: "100vh",
           position: "fixed",
           zIndex: 1,
@@ -88,13 +88,13 @@ export const SideNav: React.FC = () => {
             />
           </Box>
           <Box as="nav" sx={{}}>
-            <Link to="/dashboard">
+            <Link to="/dashboard" onClick={() => setIsVisible(false)}>
               <Flex sx={{ gap: "4px", alignItems: "center" }}>
                 <Image src="./icons/dashboardIcon.svg" sx={{ width: 24, heigh: 24 }} />
                 Dashboard
               </Flex>
             </Link>
-            <Link to="/risky-troves">
+            <Link to="/risky-troves" onClick={() => setIsVisible(false)}>
               <Flex sx={{ gap: "4px", alignItems: "center" }}>
                 <Image src="./icons/rocket.svg" sx={{ width: 24, heigh: 24 }} />
                 Risky Troves

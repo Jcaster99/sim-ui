@@ -27,7 +27,7 @@ export const SecondSection: React.FC<IConnectWallet> = ({ callback }) => {
           }
         }}
       >
-        <Grid gap={2} columns={[1, 2]} sx={{ width: "100%" }}>
+        <Grid gap={2} columns={[1,1,1, 2]} sx={{ width: "100%" }}>
           <Flex sx={{ width: ["100%"], justifyContent: "center" }}>
             <Image
               // src="./icons/section2Img.svg"

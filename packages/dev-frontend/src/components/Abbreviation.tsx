@@ -11,7 +11,7 @@ export const Abbreviation: React.FC<AbbreviationProps> = ({ children, short, ...
       {children}
     </Box>
 
-    <Box as="span" sx={{ display: ["unset", "none"] }}>
+    <Box as="span" sx={{ display: ["unset", "none"], color:"white" }}>
       {short}
     </Box>
   </Box>

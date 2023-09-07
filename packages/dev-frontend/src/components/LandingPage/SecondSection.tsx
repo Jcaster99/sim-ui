@@ -27,7 +27,7 @@ export const SecondSection: React.FC<IConnectWallet> = ({ callback }) => {
           }
         }}
       >
-        <Grid gap={2} columns={[1,1,1, 2]} sx={{ width: "100%" }}>
+        <Grid gap={2} columns={[1, 1, 1, 2]} sx={{ width: "100%" }}>
           <Flex sx={{ width: ["100%"], justifyContent: "center" }}>
             <Image
               // src="./icons/section2Img.svg"
@@ -69,7 +69,17 @@ export const SecondSection: React.FC<IConnectWallet> = ({ callback }) => {
               Phasellus luctus, odio eu imperdiet egestas, nibh ipsum hendrerit nulla, nec rutrum dui
               erat et nunc. Praesent rutrum volutpat ipsum, ullamcorper posuere magna volutpat ac.
             </Paragraph>
-            <Button variant="outline" sx={{ width: "248px" }} onClick={callback}>
+            <Button
+              variant="outline"
+              sx={{
+                width: "248px",
+                color: "#fff",
+                ":enabled:hover": {
+                  color: "#000"
+                }
+              }}
+              onClick={callback}
+            >
               Launchapp
             </Button>
           </Flex>

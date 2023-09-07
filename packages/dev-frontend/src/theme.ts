@@ -43,18 +43,19 @@ const button: ThemeUIStyleObject = {
   px: "32px",
   py: "12px",
 
-  color: "white",
+  color: "#000",
   border: 1,
   "&:hover": {
     color: "#000",
-    bg: "background"
+    bg: "background",
+    borderColor: "background"
     // opacity: 0.5
   },
-  fontWeight: "bold",
+  fontWeight: "bold"
 
-  ":disabled": {
-    opacity: 0.5
-  }
+  // ":disabled": {
+  //   opacity: 0.5
+  // }
 };
 
 const buttonOutline = (color: string, hoverColor: string): ThemeUIStyleObject => ({
@@ -204,7 +205,7 @@ const theme: Theme = {
 
       bg: "primary",
       borderColor: "primary",
-
+      opacity: 1,
       ":enabled:hover": {
         bg: "white",
         borderColor: "#fff"
@@ -221,9 +222,12 @@ const theme: Theme = {
       ...button,
       bg: "#1D2939",
       borderColor: "#1D2939",
-      opacity: 0.8,
+      color: "#98A2B3",
+      opacity: 1,
       ":enabled:hover": {
         bg: "#1D2939",
+      borderColor: "#1D2939",
+
         opacity: 1,
         color: "white"
       }

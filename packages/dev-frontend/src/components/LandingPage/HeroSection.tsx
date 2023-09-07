@@ -45,7 +45,17 @@ export const HeroSection: React.FC<IConnectWallet> = ({ callback }) => {
             luctus, odio eu imperdiet egestas, nibh ipsum hendrerit nulla, nec rutrum dui erat et
             nunc. Praesent rutrum volutpat ipsum, ullamcorper posuere magna volutpat ac.
           </Paragraph>
-          <Button variant="outline" sx={{ width: ["100%", "248px"] }} onClick={callback}>
+          <Button
+            variant="outline"
+            sx={{
+              width: ["100%", "248px"],
+              color: "#fff",
+              ":enabled:hover": {
+                color: "#000"
+              }
+            }}
+            onClick={callback}
+          >
             Launchapp
           </Button>
           <Paragraph

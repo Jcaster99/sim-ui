@@ -50,7 +50,11 @@ export const UserAccount: React.FC = () => {
         {connectKit => (
           <Button
             variant="outline"
-            sx={{ alignItems: "center", p: 2, mr: 3 }}
+            sx={{ alignItems: "center", p: 2, mr: 3,color: "#fff",
+            ":enabled:hover": {
+              color: "#000"
+            } }}
+            
             onClick={connectKit.show}
           >
             <Icon name="user-circle" size="lg" />

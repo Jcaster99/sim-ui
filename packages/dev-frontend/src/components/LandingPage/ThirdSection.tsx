@@ -122,7 +122,10 @@ export const ThirdSection: React.FC<IConnectWallet> = ({ callback }) => {
               Phasellus luctus, odio eu imperdiet egestas, nibh ipsum hendrerit nulla, nec rutrum dui
               erat et nunc. Praesent rutrum volutpat ipsum, ullamcorper posuere magna volutpat ac.
             </Paragraph> */}
-            <Button variant="outline" sx={{ width: ["100%", "248px"] }} onClick={callback}>
+            <Button variant="outline" sx={{ width: ["100%", "248px"],color: "#fff",
+              ":enabled:hover": {
+                color: "#000"
+              } }} onClick={callback}>
               Launchapp
             </Button>
           </Flex>

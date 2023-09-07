@@ -47,6 +47,7 @@ export const Footer: React.FC = () => {
               borderColor: "#5865F2",
               width: ["100%", "184px"],
               height: "52px",
+              color: "white",
               ":hover": {
                 color: "#5865F2",
                 "div:nth-of-type(1)": {
@@ -56,7 +57,12 @@ export const Footer: React.FC = () => {
             }}
           >
             <Box
-              sx={{ mr: "5px", width: 24, height: 18, background: "url(./icons/Discord.svg) 100%" }}
+              sx={{
+                mr: "5px",
+                width: 24,
+                height: 18,
+                background: "url(./icons/Discord.svg) 100%"
+              }}
             ></Box>
             Discord
           </Button>

@@ -5,7 +5,7 @@ import { FourSection } from "../components/LandingPage/FourSection";
 import { HeaderLanding } from "../components/LandingPage/HeaderLanding";
 import { HeroSection } from "../components/LandingPage/HeroSection";
 import { SecondSection } from "../components/LandingPage/SecondSection";
-import { ThirdSection } from "../components/LandingPage/ThirdSection";
+// import { ThirdSection } from "../components/LandingPage/ThirdSection";
 
 interface IHeaderLanding {
   callback?: () => void | undefined;
@@ -16,7 +16,7 @@ export const LandingPage: React.FC<IHeaderLanding> = ({ callback }) => {
       <HeaderLanding callback={callback} />
       <HeroSection callback={callback} />
       <SecondSection callback={callback} />
-      <ThirdSection callback={callback} />
+      {/* <ThirdSection callback={callback} /> */}
       <FourSection />
       <FifthSection />
       <Footer />
